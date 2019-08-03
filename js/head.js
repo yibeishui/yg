@@ -2,6 +2,7 @@ $(function () {
     let navul = $(".yg-nav-shop");
     let re;
     let msUl;
+    let ulList;
     new Promise((reslove, reject) => {
         $.ajax({
             type: "post",
@@ -104,34 +105,55 @@ $(function () {
             }, function () {
                 $(this).css("background", "rgba(0,0,0,0.2)")
             })
+
+            // 缺：秒杀倒计时渲染
             reslove();
 
         })
 
     }).then(function () {
-        //食品酒水渲染
-        $('.yg-shopbigimg').each((ind, ele) => {
-            // console.log(ind,ele);
-            $(ele).append(`<img src="${re[0].bigimg[ind]}" alt=""> `)
+        return new Promise((reslove, reject) => {
+            //食品酒水渲染
+            $('.yg-shopbigimg').each((ind, ele) => {
+                // console.log(ind,ele);
+                $(ele).append(`<img src="${re[0].bigimg[ind]}" alt=""> `)
 
-        });
-        $('.yg-shopsmall').each((ind, el) => {
-            let rr = `<a href="">
+            });
+            $('.yg-shopsmall').each((ind, el) => {
+                let rr = `<a href="">
                      <div>
                         <h4>${re[0].smallcon[ind].p1}</h4>
                         <p>${re[0].smallcon[ind].p2}</p>
                     </div>
                     <img src="${re[0].smallcon[ind].img}" alt="">
                 </a>`
-                // console.log(re[0].smallcon[ind].img);
-                
-            $(el).append(rr)
+
+                $(el).append(rr)
+            })
+
+            $('.yg-shopsmallimg').each((ind, el) => {
+                console.log($(el));
+
+                let rr = `<img src="${re[0].smallimg[ind]}"/>`
+                $(el).append(rr)
+            })
+
+            reslove();
         })
 
-        $('.yg-shopsmallimg').each((ind, el) => {
-            let rr = `<img src="${res[0].smallimg[ind]}"/>`               
-            $(el).append(rr)
+
+    }).then(function () {
+        //更多喜欢推荐渲染
+        ulList = $(".yg-youlike-more");
+        re[0].tjlist.forEach(e => {
+            let res = ` <li class="fl"><a href="" class="yg-morelist">
+            <img src="${e.img}" alt="">
+            <p>${e.tit}</p>
+            <div><span class="yg-morelist-price">￥${e.price}.00</span></div>
+        </a></li>`;
+            ulList.append(res);
         })
+
 
 
     })

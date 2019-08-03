@@ -39,6 +39,37 @@ a{
     color: #000000;
 
 }
+
+
+
+
+/* 侧边栏 */
+.yg-sidebar{
+    position: fixed;
+    z-index: 9999;  
+    width: 35px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.yg-sidebar li{
+    width: 35px;
+    height: 35px;
+    margin-bottom: 1px;
+    background-color: #7a6e6e;
+    border-radius: 3px 0 0 3px;
+}
+.yg-totop{
+    position: fixed;
+    z-index: 9999;  
+    right: 0;
+    bottom: 0;
+    width: 35px;
+    height: 35px;
+    background-color: #7a6e6e;
+    border-radius: 3px 0 0 3px;
+}
 /* 头 */
 .yg-header{
 height: 35px;
@@ -118,8 +149,23 @@ margin-right: 120px;
     margin-top: 5px;
     height: 20px;
     line-height: 20px;
+    display: flex;
+    position: relative;
+    color: #666666;
 }
+.yg-hot-div{
+    color: #999999;
+    margin-right: 5px;
+}
+.yg-hot-history{
+    position: absolute;
+    width: 550px;
+    height: 122px;
+    border: 1px solid #cccccc;
+    display: none;
+    top: -5px;
 
+}
 .yg-car{
     width: 140px;
     height: 36px;
@@ -155,18 +201,20 @@ margin-right: 120px;
 }
 
 
-.yg-nav-top dl{
+.yg-nav-top-dl{
     line-height: 42px;
     font-size: 15px;
+}
+.yg-nav-top-dl dt a{
+    color: #f30213;
+    padding: 0 24px;
+    font-weight: bold;
 
 }
-.yg-nav-top>dl dt a{
-    color: #C5000c;
-    padding: 0 24px;
-}
-.yg-nav-top dd{
+.yg-nav-top-dl dd{
 
     padding: 0 24px;
+    text-align: center;
 }
 .yg-navshopall{
     width: 180px;
@@ -327,14 +375,16 @@ margin-right: 120px;
 }
 .yg-pptj>p{
  
-    font-size: 12px;
+ font-size: 12px;
 text-align: center;
+
 
 }
 .yg-pptj-p1{
 font-weight: bold;
 height: 24px;
 line-height: 24px;
+margin-bottom: 5px;
     
 }
 .yg-pptj-p2{
@@ -342,7 +392,8 @@ line-height: 24px;
     height: 60px;
     padding: 10px;
     color: #666666;
-    box-sizing: border-box;
+    box-sizing: border-box;   
+     line-height: 20px;
     
 }
 .yg-shop{
@@ -470,10 +521,15 @@ font-weight: bold;
     background: #EDBA21;
     color: #ffffff;
     margin-top: 30px;
+    font-size: 22px;
+font-weight: 100;
+padding-left: 25px;
+line-height: 58px;
 }
 .yg-food-con{
     height: 420px;;
     padding: 10px;
+    box-sizing: border-box;
     background: #ffffff;
     display: flex;
 
@@ -502,22 +558,23 @@ box-sizing:border-box;
 }
 .yg-shopdiv{
     display: flex;
-    justify-content: space-between;
+
 }
 .yg-shopbox-left{
     border-right: 1px solid #cccccc;
-    box-sizing: border-box;
+
 }
 .yg-shopbigimg{
     margin-right: 10px;
+    font-size: 0;
 }
 .yg-shopbigimg>img{
-    width: 196px;
+    width: 186px;
     height: 260px;
  
 }
 .yg-shopsmall{
-    width: 190px;
+    width: 191px;
     height: 130px;
     padding: 25px 5px 0 25px;
     box-sizing:border-box;
@@ -543,25 +600,114 @@ box-sizing:border-box;
 
 .yg-shop-bottom{
     height: 130px;
+    padding-top: 10px;
+    display: flex;
+
 }
 .yg-shopsmallimg{
-    width: 196px;
+    width: 186px;
+    overflow: hidden;
+    margin-right: 10px;
+
+}
+
+.yg-shopsmallimg img{
+width: 196px;
 height: 130px;
 }
+.yg-shopbox-right{
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+
 
 /*  */
 .yg-cream{
     height: 478px;
     margin-top:15px;
+    display: flex;
+    justify-content: space-between;
+}
+.yg-cream>div{
+    background: #ffffff;
+    width: 397px;
+}
+.yg-cream>div:nth-child(1) .yg-cream-header{
+background: #cd375e;
+}
+.yg-cream>div:nth-child(2) .yg-cream-header{
+    background: #974676;
+    }
+    .yg-cream>div:nth-child(3) .yg-cream-header{
+        background: #78538e;
+        }
+.yg-cream-header{
+height: 58px;
+color: #ffffff;
+font-size: 22px;
+font-weight: 100;
+line-height: 58px;
+padding-left: 25px;
+box-sizing: border-box;
+}
+.yg-cream-con{
+    padding: 10px;
+    
+}
+.yg-cream-con .yg-shop-bottom .yg-shopsmallimg:nth-child(2){
+    margin-right: 0;
+}
+
+.yg-cream .yg-shopsmall:nth-child(1){
+border-bottom: 1px solid #cccccc;
 }
 
 
+
+/*  */
 .yg-youlike{
     height: 70px;
 }
-.yg-youlike>div{
-    height: 32px;
+
+
+
+
+.yg-youlike-more li{
+    width: 224px;
+    height: 305px;
+    padding: 4px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ffffff;
+    background: #ffffff;
 }
+.yg-youlike-more li:nth-child(5n){
+    margin-right: 0;
+}
+.yg-morelist{
+    display: flex;
+    flex-direction: column;
+
+}
+.yg-morelist img{
+    width: 224px;height: 224px;
+}
+.yg-morelist p{
+    width: 204px;height: 36px;
+    padding:10px 10px 0 10px;
+    font-size: 12px;
+    margin-bottom: 5px;color: #333333;
+    overflow: hidden;
+    line-height: 18px;
+}
+.yg-morelist-price{
+    height: 18px;
+    font-size: 12px;
+    color: #f10214;
+    margin-left: 10px;
+}
+
 /* 脚 */
 .yg-foot{
     height: 435px;
@@ -569,11 +715,89 @@ height: 130px;
 
 }
 .yg-notice{
-    height: 229px;
+    height: 272px;
     background: #ffffff;
+
 }
+
+.yg-notice-top{
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+.yg-natice-bottom .yg-content{
+    display: flex;
+    padding-top: 25px;
+}
+
+.yg-natice-bottomleft{
+    width: 300px;
+    padding: 0 6px 0 15px;
+    box-sizing: border-box; 
+    border-right: 1px solid #cccccc;
+
+}
+.yg-natice-bottom dt{
+    color: #666666;
+    height:30px;
+}
+.yg-natice-bottomleft dt{
+    padding-left: 5px;
+   
+    margin-bottom: 5px;
+    box-sizing: border-box;
+
+}
+.yg-natice-bottom dd{
+    height: 24px;
+      
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.yg-natice-bottomleft dd {
+    width: 250px;
+
+}
+.yg-natice-bottom dd a{
+    font-size: 12px; 
+    color: #999999;
+}
+.yg-natice-bottomright{
+    padding-left: 50px;
+}
+.yg-natice-bottomright>ul{
+    width: 823px;
+    display: flex;
+
+}
+.yg-natice-bottomright>ul>li{
+    /* float: left; */
+    flex: 1;
+}
+/*  */
 .yg-footbottom{
     height: 224px;
+
     background: #343A34;
-    color: #ffffff;
+    color: #eeeeee; 
+    font-size: 12px;
+    overflow: hidden;
+   
+   
+}
+.yg-footbottom a{
+    font-size: 12px;
+    color: #eeeeee; 
+}
+.yg-footbottom p{
+    text-align: center;
+    margin-top: 15px;
+}
+.yg-footimg img{
+    width: 108px;
+    height: 40px;
+    margin-right: 20px;
+}
+.yg-footimg a:nth-last-child(1){
+    margin-right: 0;
 }
