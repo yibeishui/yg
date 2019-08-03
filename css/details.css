@@ -111,10 +111,51 @@ position: relative;
 }
 
 /*  */
-.detail-item{
+.detail-item li{
     width: 240px;
     height: 475px;
+    padding: 38px 9px 10px 9px;
+    box-sizing: border-box;
     /* beijin */
     border: 1px solid red;
     margin-top: 10px;
+    font-size: 12px;
+}
+.detail-item-con{
+    display: flex;
+    flex-direction: column;
+}
+.detail-item-con img{
+    width: 220px;
+    height: 220px;
+}
+.detail-item-price{
+    height: 22px;
+    padding: 15px 0 8px 0;
+    color: #E4393C;
+    font-size: 20px;
+}
+.detail-item-tit{
+    width: 220px;
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    line-height: 20px;
+}
+.detail-item-estimate{
+    height: 18px;
+    margin-bottom: 9px;
+    color: #999999;
+}
+.detail-item-shop{
+    height: 18px;
+    margin-bottom: 9px;
+
+}
+.detail-item-shop a{
+    color: #999999;
+}
+.detail-item-autotrophy{
+    height: 16px;
+    margin-bottom: 12px;
 }
