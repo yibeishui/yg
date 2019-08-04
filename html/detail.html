@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
     <link rel="stylesheet" href="../css/details.css">
     <script src="../js/jquery-3.4.1.js"></script>
-<script src="../js/detail.js"></script>
+    <script src="../js/detail.js"></script>
 </head>
+
 <body>
     <div id="yg">
         <!-- 头部模块导入 多加一个返回首页功能 -->
@@ -18,32 +21,113 @@
             <div class="yg-content">
                 <!-- 分类栏目 根据首页url 参数生成几个li -->
                 <div class="shopping-guide">
-                      <ul>
-                          <li class="shopping-guide-item fl">
-                              <div class="shopping-guide-tit">食品饮料<span></span></div>
-                            
-                              <!-- 分类 -->
-                              <ul class="shopping-guide-list"></ul>
-                          </li>
-                      </ul>
+                    <ul>
+                        <li class="shopping-guide-item fl">
+                            <div class="shopping-guide-tit">食品饮料
+                                <div class="shopping-guide-titicon">
+                                    <div class="iconfont icon-down2"></div>
+                                    <div class="iconfont icon-up2"></div>
+                                </div>
+                            </div>
+
+                            <!-- 分类 -->
+                            <ul class="shopping-guide-list">
+                                <li>
+                                    <a href="">222</a>
+                                </li>
+                                <li>2222</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
                 <!-- 分类相关内容 由子元素撑开宽高 -->
                 <div class="shopping-guidecon">
                     <!-- 分类筛选结果 -->
-                    <div class="shopping-sifting">分类 - <span class="shopping-guide-title">"dddd结果"</span>筛选结果</div>
-                    <div class="shopping-sifting-order">
+                    <div class="shopping-sifting">分类 -
+                        <span class="shopping-guide-title">"dddd结果"</span>筛选结果</div>
+                    <div class="shopping-sifting-orders">
                         <dl>
                             <dt class="fl">包含分类：</dt>
-                            <dd class="fl"><a href="">休闲小吃</a></dd>
-                            <dd class="fl"><a href="">休闲小吃</a></dd>
+                            <dd class="fl">
+                                <a href="">休闲小吃</a>
+                            </dd>
+                            <dd class="fl">
+                                <a href="">休闲小吃</a>
+                            </dd>
                         </dl>
                     </div>
                 </div>
                 <!-- 价格 默认排序等栏目 顶部定位 -->
-                <div class="shopping-sort"></div>
+                <div class="shopping-sort">
+                    <!-- 排行 -->
+                    <div class="price-ranking">
+                        <ul>
+                            <li class="fl price-ranking-active">默认排序</li>
+                            <li class="fl">成交量</li>
+                            <li class="fl">价格
+                                <span class="iconfont icon-shang-copy"></span>
+                            </li>
+                            <li class="fl">评论</li>
+                        </ul>
+                    </div>
+                    <!-- 价格 -->
+                    <div class="price-competition">
+                        <input type="text" name="" id="" placeholder="￥">
+                        <span>-</span>
+                        <input type="text" name="" id="" placeholder="￥">
+                        <button>确定</button>
+                    </div>
+                    <!-- 起购量 -->
+                    <div class="shopping-volume">
+                        起购量
+                        <input type="text" name="" id=""> 以下
+                        <button>确定</button>
+                    </div>
+                    <!-- 经营类型筛选 -->
+                    <div class="shopping-huodong">
+                        <ul>
+                            <li class="fl">
+                                <p>经营类型
+                                    <span class="iconfont icon-down2"></span>
+                                </p>
+                                <ul class="shopping-huodong-ul2">
+                                    <li>平台自营</li>
+                                    <li>三方店铺</li>
+                                </ul>
+                            </li>
+                            <li class="fl">
+                                <p>促销活动
+                                    <span class="iconfont icon-down2"></span>
+                                </p>
+                                <ul class="shopping-huodong-ul2">
+                                    <li>限时折扣</li>
+                                    <li>全款预售</li>
+                                    <li>定金预售</li>
+                                    <li>秒杀活动</li>
+                                </ul>
+                            </li>
+                            <li class="fl">
+                                <p>销售模式
+                                    <span class="iconfont icon-down2"></span>
+                                </p>
+                                <ul class="shopping-huodong-ul2">
+                                    <li>零售型</li>
+                                    <li>批发型</li>
+                                    <li>海外型</li>
+                                    <li>虚拟型</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 赠品 包邮 -->
+                    <div class="shopping-baoyu">
+                    <div><span class="shopping-baoyu-span"></span>赠品</div>
+                    <div><span class="shopping-baoyu-span"></span>包邮</div>
+                    </div>
+                </div>
                 <!-- 根据返回数据渲染 -->
                 <div>
-                       <ul class="detail-item">
+                    <ul class="detail-item">
                         <li>
                             <!-- 图片 -->
                             <!-- 价格 -->
@@ -51,32 +135,100 @@
                             <div>
                                 <a href="" class="detail-item-con">
                                     <img src="https://pic5.cnrmall.com/image/57/92/5792f55964de82f21ff57d99f960c36f.jpg@240w_240h" alt="">
-                                    <p class="detail-item-price"><span>79.00</span><span class="detail-item-icon fr">折扣</span></p>
-                                    <p class="detail-item-tit">
+                                    <p class="detail-item-price">
+                                        <span>79.00</span>
+                                        <span class="detail-item-icon fr">折扣</span>
+                                    </p>
+                                    <p class="detail-item-title">
                                         <span>正一品 鲜卤鸭肫肝鸭舌鸭翅鸭脖 440g/4袋组 鸭肫肝110g*1袋)</span>
-                                       <span>广东潮汕特产鸭类零食组合(鸭翅150g*1袋 鸭脖120g*1袋 鸭舌70g*1袋 鸭肫肝110g*1袋)</span>
-                                </p>
+                                        <span>广东潮汕特产鸭类零食组合(鸭翅150g*1袋 鸭脖120g*1袋 鸭舌70g*1袋 鸭肫肝110g*1袋)</span>
+                                    </p>
                                 </a>
                             </div>
 
 
                             <!-- 成交与评论 -->
                             <div class="detail-item-estimate">
-                                <span><span class="item-estimate-volume">11</span>笔成交</span>
-                                <span><span class="item-estimate-Comments">1</span>条评论</span>
+                                <span>
+                                    <span class="item-estimate-volume">11</span>笔成交</span>
+                                <span>
+                                    <span class="item-estimate-Comments">1</span>条评论</span>
                             </div>
 
                             <!-- 店铺 -->
-                            <p class="detail-item-shop"><a href="">康辉食品官方旗舰店</a></p>
+                            <p class="detail-item-shop">
+                                <a href="">康辉食品官方旗舰店</a>
+                            </p>
                             <!-- 自营店铺？ -->
-                            <p class="detail-item-autotrophy"><span>自营</span></p>
+                            <p class="detail-item-autotrophy">
+                                <span>自营</span>
+                            </p>
 
                             <!-- 收藏与加入购物车 -->
                             <div class="detail-item-car">
-                                <div class="item-toCollection"><span></span>收藏</div>
-                                <div class="item-tocar"><span></span>加入购物车</div>
+                                <div class="item-toCollection">
+                                    <div class="icon-span1">
+                                        <div class="iconfont icon-xinaixin"></div>
+                                        <div class="iconfont icon-xin1"></div>
+                                    </div>
+                                    <span>收藏</span>
+                                </div>
+                                <div class="item-tocar">
+                                    <span class="iconfont icon-jiarugouwuche"></span>加入购物车</div>
                             </div>
-                            
+
+                        </li>
+
+                        <!-- cf -->
+                        <li>
+                            <!-- 图片 -->
+                            <!-- 价格 -->
+                            <!-- 商品内容 -->
+                            <div>
+                                <a href="" class="detail-item-con">
+                                    <img src="https://pic5.cnrmall.com/image/57/92/5792f55964de82f21ff57d99f960c36f.jpg@240w_240h" alt="">
+                                    <p class="detail-item-price">
+                                        <span>79.00</span>
+                                        <span class="detail-item-icon fr">折扣</span>
+                                    </p>
+                                    <p class="detail-item-title">
+                                        <span>xxx鲜卤鸭肫肝鸭舌鸭翅鸭脖 440g/4袋组 鸭肫肝110g*1袋)</span>
+                                        <span>广东潮汕特产鸭类零食组合(鸭翅150g*1袋 鸭脖120g*1袋 鸭舌70g*1袋 鸭肫肝110g*1袋)</span>
+                                    </p>
+                                </a>
+                            </div>
+
+
+                            <!-- 成交与评论 -->
+                            <div class="detail-item-estimate">
+                                <span>
+                                    <span class="item-estimate-volume">11</span>笔成交</span>
+                                <span>
+                                    <span class="item-estimate-Comments">1</span>条评论</span>
+                            </div>
+
+                            <!-- 店铺 -->
+                            <p class="detail-item-shop">
+                                <a href="">康辉食品官方旗舰店</a>
+                            </p>
+                            <!-- 自营店铺？ -->
+                            <p class="detail-item-autotrophy">
+                                <span>自营</span>
+                            </p>
+
+                            <!-- 收藏与加入购物车 -->
+                            <div class="detail-item-car">
+                                <div class="item-toCollection">
+                                    <div class="icon-span1">
+                                        <div class="iconfont icon-xinaixin"></div>
+                                        <div class="iconfont icon-xin1"></div>
+                                    </div>
+                                    <span>收藏</span>
+                                </div>
+                                <div class="item-tocar">
+                                    <span class="iconfont icon-jiarugouwuche"></span>加入购物车</div>
+                            </div>
+
                         </li>
                     </ul>
                 </div>
@@ -88,6 +240,7 @@
 
         <!-- 脚步模块导入 -->
     </div>
-    
+
 </body>
+
 </html>
