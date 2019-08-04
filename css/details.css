@@ -196,6 +196,10 @@ box-sizing:border-box;
 display: none;
     
 }
+.shopping-sort button:hover{
+    background: red;
+    color: #ffffff;
+}
 .price-ranking .price-ranking-active{
     background: red;
     color: #ffffff;

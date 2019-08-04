@@ -15,10 +15,10 @@ $(function () {
                 res[0].one.forEach(e => {
                     let ll = '';
                     e.forEach(el => {
-                        ll += el + " / "
+                        ll += `<a href="">${el}</a> / `
                     })
                     let lll = ll.slice(0, -2);
-                    navul.append($(`<li><a href="">${lll}</a><div class="yg-nav-listtit"></div></li>`));
+                    navul.append($(`<li>${lll}<div class="yg-nav-listtit"></div></li>`));
                     reslove();
                 })
             }
