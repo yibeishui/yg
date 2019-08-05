@@ -145,9 +145,14 @@ border-top: 1px solid #F9F9F9;
 .yg-reg:hover{
     color: red;
 }
-.yg-customer-info-ul li{
+.yg-customer-info-ul li a{
+    display:block;
     padding: 0 12px;
 
+
+}
+.yg-customer-info-ul>li>a{
+    z-index: 88;
 }
 .yg-customer-info-ul li a .iconfont{
     font-size: 12px;  
@@ -157,6 +162,67 @@ border-top: 1px solid #F9F9F9;
 
 .yg-customer-info-ul li a .icon-shouji{
     font-size: 16px;
+}
+.yg-customer-info-ul>li{
+    position: relative;
+}
+
+.yg-customer-info-ul>li>ul{
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 0 0 2px #cccccc;
+   top: -300px;
+    left: 0;
+}
+.yg-customer-info-ul ul li{
+    float: left;
+}
+.yg-customer-info-ul ul li:hover a{
+color: #C5000c;
+}
+.yg-customer-info-ul>li:hover{
+
+    background: #ffffff;
+    box-shadow: 0 0px 2px #cccccc;
+
+}
+.yg-customer-info-ul>li:hover ul{
+    transition: top .5s;
+    top: 36px;
+
+    
+}
+.yg-customer-info-myshop {
+    width: 200%;
+}
+.yg-customer-info-myshop li{
+
+    line-height: 50px;  
+  }
+  .yg-customer-info-weixin {
+      position: absolute;
+      right: 0;
+      padding: 20px;
+      box-shadow: 0 0px 2px #cccccc;    
+    background: #ffffff;
+   top: -280px;
+  }
+.yg-customer-info-weixin img{
+    width: 140px;
+    height: 140px;
+
+
+}
+.yg-customer-info-weixin p{
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+    color: #999999;
+}
+.yg-customer-info-ul>li:hover .yg-customer-info-weixin{
+  transition: top .5s;
+  top: 36px;
+
 }
 /* 检索 */
 .yg-search{
@@ -446,7 +512,7 @@ color: red;
     
 }
 
-.yg-pptj>img{
+.yg-pptj img{
     height: 243px;
 
 }

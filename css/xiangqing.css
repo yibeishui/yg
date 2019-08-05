@@ -1,0 +1,160 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    list-style: none;
+    text-decoration: none;
+
+
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#yg{
+    display: flex;
+    flex-direction: column;
+
+}
+.yg-content{
+    width: 1210px;
+    margin: 0 auto;
+    height: 100%;
+}
+.fr{
+    float: right;
+}
+.fl{
+    float: left;
+}
+.clearfix::after{
+    content: " ";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+a{
+    color: #000000;
+
+}
+/*  */
+.yg-xiangqing-tit{
+    height: 26px;
+    padding: 10px 0;
+    font-size: 12px;
+}
+.yg-xiangqing-tit .icon-shouye{
+    font-size: 12px;
+}
+
+/*  */
+.xiangqing-shop{
+    display: flex;
+    justify-content: space-between;
+}
+/* 放大镜 */
+.xiangqing-shopimg{
+    width: 380px;
+    border: 1px solid red;
+}
+/* 详情 */
+.xiangqing-shop-moreinfo{
+    width: 660px;
+    border: 1px solid red;
+}
+.shop-moreinfo-title{
+    padding: 14px 8px 10px 8px;
+    overflow: hidden;
+}
+.shop-moreinfo-title>h3{
+font-size:20px;
+margin-bottom: 4px;
+line-height: 28px;
+}
+.shop-moreinfo-title>p{
+    font-size: 13px;
+    line-height: 16px;
+    color: #e4393c;
+}
+.shop-moreinfo-huodong{
+   line-height: 34px;
+    display: flex;
+    justify-content: space-between;
+    background: #F23030;
+    color: #ffffff;
+    padding: 0 15px;
+
+}
+.shop-moreinfo-huodong >div:nth-child(1){
+    font-size: 16px;
+}
+.shop-moreinfo-huodong .icon-shizhong{
+    font-size: 20px;
+    margin-right: 8px;
+}
+.shop-moreinfo-huodong >div:nth-child(2){
+    font-size: 12px;
+}
+
+/*  */
+.xiangqing-shop-moreinfo dl{
+    display: flex;
+    font-size: 12px;
+}
+.xiangqing-shop-moreinfo dt{
+    margin-left: 20px;
+    width: 60px;
+    color: #777777;
+}
+/*  */
+.shop-moreinfo-price{
+    height: 59px;
+    line-height: 59px;
+    background: url("../images/ncs_meta_bg.png");
+margin-bottom: 10px;
+
+}
+.shop-moreinfo-newprice{
+    font-size: 26px;
+    color: #e4393c;
+    margin-right: 10px;
+}
+
+.shop-moreinfo-newprice>span{
+    font-size: 16px;
+}
+.shop-moreinfo-oldprice{
+   color: #a1a1a1;
+   text-decoration: line-through;
+}
+.shop-moreinfo-logistics{
+height: 45px;
+line-height: 45px;
+border-top: 1px solid #cccccc;
+}
+
+.shop-moreinfo-serve{
+    height: 45px;
+line-height: 45px;
+border-bottom: 1px solid #cccccc;
+}
+
+.shop-moreinfo-number{
+    height: 40px;
+    margin: 10px 0;
+    line-height: 40px;
+}
+
+.shop-moreinfo-tocar{
+padding-left: 80px;
+}
+
+
+
+/* 橱柜推荐 */
+.xiangqing-shop-youlike{
+    width: 140px;
+    border: 1px solid red;
+}
