@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,12 @@
     <link rel="stylesheet" href="../iconfont/iconfont.css">
     <link rel="stylesheet" href="../css/xiangqing.css">
 
-<script src="../js/jquery-3.4.1.js"></script>
-<script src="../js/xiangqing.js"></script>
+    <script src="../js/jquery-3.4.1.js"></script>
+
+    <script src="../js/magnifier.js"></script>
+    <script src="../js/xiangqing.js"></script>
 </head>
+
 <body>
     <!-- 引入头部 侧边栏-->
     <!-- 引入导航栏 -->
@@ -25,7 +29,60 @@
                 <!-- 商品详情放大镜 -->
                 <div class="xiangqing-shop">
                     <!-- 放大镜 左-->
-                    <div class="xiangqing-shopimg"></div>
+                    <div class="xiangqing-shopimg">
+                        <!-- 插件 -->
+                        <div class="magnifier" id="magnifier1">
+                            <div class="magnifier-container">
+                                <div class="images-cover"></div>
+                                <!--当前图片显示容器-->
+                                <div class="move-view"></div>
+                                <!--跟随鼠标移动的盒子-->
+                            </div>
+                            <div class="magnifier-assembly">
+
+                                <!--按钮组-->
+                                <div class="magnifier-line">
+                                    <ul class="clearfix animation03">
+                                        <li>
+                                            <div class="small-img">
+                                                <img src="https://pic2.cnrmall.com/image/8c/7c/8c7c912d733a54d50baf71ad901db1d0.jpg@60w_60h" , />
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="small-img">
+                                                <img src="https://pic5.cnrmall.com/image/16/f4/16f4d0c9c54e6e734029a327c3a86f0c.jpg@60w_60h" , />
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="small-img">
+                                                <img src="https://pic2.cnrmall.com/image/7b/12/7b12482ead9ad37c4d7eb4e32941cd97.jpg@60w_60h" , />
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="small-img">
+                                                <img src="https://pic3.cnrmall.com/image/5c/81/5c818516c92ad9512dbd28203a742679.jpg@60w_60h" , />
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="small-img">
+                                                <img src="https://pic5.cnrmall.com/image/37/b2/37b21b5a9d7c848cd1fffa86f08dc6f1.jpg@60w_60h" />
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--缩略图-->
+                            </div>
+                            <div class="magnifier-view"></div>
+                            <!--经过放大的图片显示容器-->
+                        </div>
+
+                        <!-- 插件 -->
+                        <div class="xiangqing-shop-share">
+                            <div><span class="iconfont icon-shoucang1"></span>收藏商品<span class="shop-shoucang-num">9</span></div>
+                            <div><span class="iconfont icon-fenxiang"></span>分享<span></span></div>
+                            <div><span class="iconfont icon-erweima"></span>移动端购买<span class="iconfont icon-down2"></span></div>
+                        </div>
+                    </div>
                     <!-- 详情 中-->
                     <div class="xiangqing-shop-moreinfo">
                         <div class="shop-moreinfo-title">
@@ -46,7 +103,8 @@
                             <div class="shop-moreinfo-price">
                                 <dl>
                                     <dt>价格</dt>
-                                    <dd class="shop-moreinfo-newprice"><span>￥</span>168.00</dd>
+                                    <dd class="shop-moreinfo-newprice">
+                                        <span>￥</span>168.00</dd>
                                     <dd class="shop-moreinfo-oldprice">￥168.00</dd>
                                 </dl>
                             </div>
@@ -54,33 +112,64 @@
                             <div class="shop-moreinfo-logistics">
                                 <dl>
                                     <dt>物流</dt>
+                                    <dd>配送至</dd>
                                     <dd></dd>
+                                    <dd>有货</dd>
+                                    <dd>免运费</dd>
                                 </dl>
                             </div>
                             <!-- 服务 -->
                             <div class="shop-moreinfo-serve">
                                 <dl>
                                     <dt>服务</dt>
-                                    <dd></dd>
+                                    <dd>非自营由
+                                        <span></span>发货，并提供售后服务。</dd>
                                 </dl>
                             </div>
                             <!-- 数量 -->
                             <div class="shop-moreinfo-number">
                                 <dl>
                                     <dt>数量</dt>
-                                    <dd></dd>
+                                    <dd class="shop-buynumber">
+                                        <span>-</span>
+                                        <span>1</span>
+                                        <span>+</span>
+
+                                    </dd>
+                                    <dd>件</dd>
+                                    <dd class="shop-moreinfokucun">（库存100件）</dd>
                                 </dl>
                             </div>
                             <!-- 加入购物车 -->
                             <div class="shop-moreinfo-tocar">
-                                <span>立即购买</span><span><span class="iconfont icon-gouwuche"></span>加入购物车</span>
+                                <span class="shop-buynow">立即购买</span>
+                                <span class="shop-addcar">
+                                    <span class="iconfont icon-gouwuche"></span>加入购物车</span>
+                            </div>
+                            <!-- 服务承诺 -->
+                            <div class="shop-chengnuo">
+                                <dl>
+                                    <dt>服务承诺</dt>
+                                    <dd><span class="iconfont icon-xin"></span>15天无理由退换货，30天只换不修</dd>
+                                </dl>
                             </div>
                         </div>
 
 
                     </div>
                     <!-- 橱柜推荐 右-->
-                    <div class="xiangqing-shop-youlike"></div>
+                    <div class="xiangqing-shop-youlike">
+                        <div>
+                            <h5>橱柜推荐</h5>
+                            <div><span></span>换一批</div>
+                        </div>
+                        <ul class="xiangqing-youlike-ul">
+                            <li><a href="">
+                                <img src="" alt="">
+                                <p>￥168</p>
+                            </a></li>
+                        </ul>
+                    </div>
                 </div>
                 <!-- 售后以及商品叙述 -->
                 <div>
@@ -93,12 +182,12 @@
                 <!-- 显示我的足迹 -->
 
                 <!-- 引入底部模块 -->
-        
+
 
             </div>
         </div>
     </div>
-     
+
 
 
 
@@ -106,6 +195,7 @@
 
 
     <!--  引入底部-->
-    
+
 </body>
+
 </html>
