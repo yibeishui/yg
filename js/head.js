@@ -1,9 +1,13 @@
+
 $(function () {
     let navul = $(".yg-nav-shop");
     let re;
     let msUl;
     let ulList;
 
+    $(".model-header").load("./model/Mhead-top.html");
+
+    $(".model-search").load("./model/Msearch.html");
     //效果未实现 图片划过移动 标签划过颜色变红 ico图标未导入 点击事件跳转未实现
     new Promise((reslove, reject) => {
         $.ajax({
@@ -156,6 +160,9 @@ $(function () {
             ulList.append(res);
         })
 
+
+        // 脚部模块引入
+        $(".model-foot").load("./model/Mfoot.html");
 
 
     })

@@ -1,0 +1,94 @@
+
+/* 脚 */
+.yg-foot{
+    height: 435px;
+    /* beijin */
+
+}
+.yg-notice{
+    height: 272px;
+    background: #ffffff;
+
+}
+
+.yg-notice-top{
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+.yg-natice-bottom .yg-content{
+    display: flex;
+    padding-top: 25px;
+}
+
+.yg-natice-bottomleft{
+    width: 300px;
+    padding: 0 6px 0 15px;
+    box-sizing: border-box; 
+    border-right: 1px solid #cccccc;
+
+}
+.yg-natice-bottom dt{
+    color: #666666;
+    height:30px;
+}
+.yg-natice-bottomleft dt{
+    padding-left: 5px;
+   
+    margin-bottom: 5px;
+    box-sizing: border-box;
+
+}
+.yg-natice-bottom dd{
+    height: 24px;
+      
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.yg-natice-bottomleft dd {
+    width: 250px;
+
+}
+.yg-natice-bottom dd a{
+    font-size: 12px; 
+    color: #999999;
+}
+.yg-natice-bottomright{
+    padding-left: 50px;
+}
+.yg-natice-bottomright>ul{
+    width: 823px;
+    display: flex;
+
+}
+.yg-natice-bottomright>ul>li{
+    /* float: left; */
+    flex: 1;
+}
+/*  */
+.yg-footbottom{
+    height: 224px;
+
+    background: #343A34;
+    color: #eeeeee; 
+    font-size: 12px;
+    overflow: hidden;
+   
+   
+}
+.yg-footbottom a{
+    font-size: 12px;
+    color: #eeeeee; 
+}
+.yg-footbottom p{
+    text-align: center;
+    margin-top: 15px;
+}
+.yg-footimg img{
+    width: 108px;
+    height: 40px;
+    margin-right: 20px;
+}
+.yg-footimg a:nth-last-child(1){
+    margin-right: 0;
+}

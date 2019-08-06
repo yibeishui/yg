@@ -1,0 +1,41 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    list-style: none;
+    text-decoration: none;
+
+
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#yg{
+    display: flex;
+    flex-direction: column;
+
+}
+.yg-content{
+    width: 1210px;
+    margin: 0 auto;
+    height: 100%;
+}
+.fr{
+    float: right;
+}
+.fl{
+    float: left;
+}
+.clearfix::after{
+    content: " ";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+a{
+    color: #000000;
+
+}

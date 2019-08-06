@@ -1,4 +1,7 @@
-// document.querySelectorAll(".item").forEach(e => {
+
+$(function(){
+
+    // document.querySelectorAll(".item").forEach(e => {
 //     let type=""; let middletype=""; let smalltype="";
 //     let img = e.querySelector("img").src; 
 //     let price = e.querySelector(".number").getAttribute("title").slice(5);
@@ -12,7 +15,11 @@
 //     let yy = {type,middletype, smalltype,img, price, youhui, tit, tit, titcon, turnover, pinlun, shorw, shop };
 //     arr1.push(yy);
 // })
+  console.log( $("#yg"));
+  
+    $(".modle-head").load("./model/Mhead-top.html");
 
+    $(".modle-search").load("./model/Msearch.html");
 $(function () {
 
     // 栏目划入
@@ -76,4 +83,5 @@ $(function () {
 
 
 
+})
 })
