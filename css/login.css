@@ -77,9 +77,9 @@ height: 480px;
     padding: 0;
     overflow: hidden;
 }
-.login-usercontent-top{
+/* .login-usercontent-top{
     height: 269px;
-}
+} */
 .login-mode{
     display: flex; 
     height: 55px;
@@ -111,7 +111,7 @@ height: 480px;
       padding: 20px;
     box-sizing: border-box;
 }
-.userlogin-tousername .userlogin-con{
+.userlogin-con{
     width: 304px;
     height: 38px;  
    margin-bottom: 22px;
@@ -159,6 +159,9 @@ color: #777;
     color: #666;
  
 }
+.userlogin-tophone .tologin{
+    margin-bottom: 24px;
+}
 .tologin span{
     /* margin-top: 8px; */
     display: inline-block;
@@ -171,4 +174,68 @@ color: #777;
     margin-right: 100px;
     vertical-align: middle;
 
+}
+.userlogin-tophone .tologin span{
+    margin-right: 60px;
+}
+.login-bottom{
+    height: 32px;
+    text-align: center;
+    border: 1px solid #e85356;
+    background: #e4393c;
+    font-size: 20px;
+    color: #fff;
+}
+
+
+/*  */
+.login-usercontent-bottom{
+    height: 50px;
+    border-top: 1px solid #cccccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.login-usercontent-bottom>div{
+    height: 19px;
+    font-size: 12px;
+    line-height: 19px;
+  
+}
+.login-weixin{
+    width: 60px;
+    border-right: 1px solid #cccccc;
+
+}
+.login-weixin span{
+    display: inline-block;
+    width: 18px ;
+    height: 18px;
+    background: url("../images/login_pic.png");
+    background-position: -120px -250px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.login-toreg span{
+    display: inline-block;
+    width: 18px ;
+    height: 18px;
+    background: url("../images/login_pic.png");
+    background-position: -180px -250px;
+    vertical-align: middle;
+    margin-right: 5px;
+    
+   
+}
+.login-toreg a{
+    color: #b61d1d;
+    font-size: 14px;
+}
+.login-modes-active{
+    position: relative;
+}
+.login-modes-div{
+  position: absolute;
+  left: -346px;
 }

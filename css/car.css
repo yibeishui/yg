@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.car-content{
+    width: 1200px;
+    margin: 0 auto;
+}
+.car-content-top{
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.car-content-top img{
+    height: 68px;
+}
+.car-content-topright li{
+    float: left;
+
+}
+.car-content-topright li{
+    width: 160px;
+    height: 70px;
+    text-align: center;
+}
+.car-content-topright li span{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url("../images/nc_cart_pic.png");
+    background-position: 0 0;
+}
+.car-content-topright li .dwgdiff2{
+    background-position: -30px 0;
+}
+.car-content-topright li .dwgdiff3{
+    background-position: -60px 0;
+}
+.car-content-topright li .dwgdiff4{
+    background-position: -90px 0;
+}
+.car-content-topright li div{
+    position: relative;
+    border-top: 1px solid #000000;
+    height: 30px;line-height: 30px;
+}
+.car-content-topright li div span{
+    position: absolute;
+    display: inline-block;
+    width: 6px;height: 6px;  
+    border-radius: 50%;
+    border: 1px solid #cccccc;
+    background: #ffffff; 
+top: 0;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+
+.car-content-topright li div .car-span-cative{
+    background: #000000;
+    border: 1px solid  #000000;
+    box-shadow: 0 0 3px #000;
+ 
+}
