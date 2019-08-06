@@ -1,13 +1,13 @@
 
 $(function () {
-    let navul = $(".yg-nav-shop");
+   
     let re;
     let msUl;
     let ulList;
 
     $(".model-header").load("./model/Mhead-top.html");
-
     $(".model-search").load("./model/Msearch.html");
+
     //效果未实现 图片划过移动 标签划过颜色变红 ico图标未导入 点击事件跳转未实现
     new Promise((reslove, reject) => {
         $.ajax({
@@ -16,50 +16,17 @@ $(function () {
             success(res) {
                 //渲染一级导航
                 re = res;
-                res[0].one.forEach(e => {
-                    let ll = '';
-                    e.forEach(el => {
-                        ll += `<a href="">${el}</a> / `
-                    })
-                    let lll = ll.slice(0, -2);
-                    navul.append($(`<li>${lll}<div class="yg-nav-listtit"></div></li>`));
-                    reslove();
-                })
+                let navul = $(".yg-nav-shop");
+                $.nav(navul);
+              
+                reslove();
             }
         })
     }).then(function () {
         return new Promise(function (reslove, reject) {
-            //渲染二级导航
-            $(".yg-nav-listtit").each((ind, e) => {
-                let index = ind;
-                let ss = $(`<div class="fl yg-nav-div1"></div>`)
-                re[0].two[index].forEach(el => {
-                    let res;
-
-                    res = el.twocon.map(ele => {
-                        return `<dd><a href="">${ele}</a></dd>`
-                    }).join("");
-                    ss.append($(`<dl><dt><a href="">${el.twotitle}<span>></span></a></dt><div class="yg-nav-listdd">${res}</div></dl>`))
-                })
-                $(e).append(ss);
-                $(e).append(`<div class="yg-nav-listdiv3 fr"><div>`);
-                //渲染二级导航的图片
-                let twoimg = re[0].twoimg[index].map(ee => {
-                    return `<a href=""><img src="${ee}" /></a>`
-                })
-                $(".yg-nav-listdiv3").eq(index).html(twoimg);
-            })
-            //二级导航显示隐藏
-            navul.on("mouseenter", "li", function () {
-                let ind = $(this).index();
-                $(".yg-nav-listtit").eq(ind).css("display", "block");
-            })
-            navul.on("mouseleave", "li", function () {
-
-                $(".yg-nav-listtit").css("display", "none");
-            })
+          
             //秒杀区的渲染
-            console.log(re[0].miaosha);
+            // console.log(re[0].miaosha);
             msUl = $('.yg-miaosha-ul');
             re[0].miaosha.forEach((e, ind) => {
                 if (ind < 18) {
@@ -138,7 +105,7 @@ $(function () {
             })
 
             $('.yg-shopsmallimg').each((ind, el) => {
-                console.log($(el));
+                // console.log($(el));
 
                 let rr = `<img src="${re[0].smallimg[ind]}"/>`
                 $(el).append(rr)

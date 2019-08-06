@@ -15,7 +15,6 @@ $(function(){
 //     let yy = {type,middletype, smalltype,img, price, youhui, tit, tit, titcon, turnover, pinlun, shorw, shop };
 //     arr1.push(yy);
 // })
-  console.log( $("#yg"));
   
     $(".modle-head").load("./model/Mhead-top.html");
 
@@ -84,4 +83,9 @@ $(function () {
 
 
 })
+
+
+$(".model-foot").load("./model/Mfoot.html");
+
+
 })
