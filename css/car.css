@@ -134,5 +134,213 @@ transform: translate(-50%,-50%);
     height: 20px;
     line-height: 20px;
     color: #bfbfbf;
+    margin-bottom: 15px;
 }
 /*  */
+.car-listhead {
+    border: solid 1px #E9E9E9;
+    background-color: #F3F3F3;
+    padding:4px 0;
+    height: 30px;
+}
+.car-listhead li{
+    float: left;
+    line-height: 30px;
+    font-size: 12px;
+}
+.car-listhead li:nth-child(1){
+width: 90px;
+padding-left: 18px;
+}
+.car-listhead li:nth-child(2){
+    width: 480px;
+}
+.car-listhead li:nth-child(3){
+    width: 166px;
+    text-align: center;
+}
+.car-listhead li:nth-child(4){
+    width: 175px;
+    padding-right: 15px;
+    text-align: right;
+}
+.car-listhead li:nth-child(5){
+    width: 78px;
+    text-align: center;
+}
+.car-listhead li:nth-child(6){
+    width: 150px;
+    text-align: right;
+}
+.car-list input[type="checkbox"]{
+    margin-right: 6px;
+    vertical-align: middle;
+}
+.car-listul>li{
+    margin-bottom: 20px;
+}
+
+.car-list-merchant{
+    height: 50px;
+    line-height: 50px;
+    padding-left: 18px;
+    border-bottom: 2px solid #333333;
+}
+.shops{
+    position: relative;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    height: 137px;
+    padding: 20px 19px 25px 20px;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 12px;
+}
+.shop-con{
+    display: flex;
+  
+}
+.shop-con img{
+width: 80px;
+height: 80px;
+border: 1px solid #cccccc;
+margin-right: 15px;
+}
+.shop-con p{
+    width: 480px;
+}
+
+.shop-number{
+    width: 166px;
+    font-size: 0;
+    padding-top: 45px;
+}
+.shop-number span{
+    height: 26px;
+    border: 1px solid #cccccc;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+    line-height: 26px;
+}
+.shop-number .removenumber{
+    width: 24px;
+}
+.numbers{
+    width: 50px;
+    margin-left: -1px;
+
+}
+.shop-number .addnumber{
+    width: 24px;
+    margin-left: -1px;
+}
+
+
+
+.shop-price{
+    width: 175px;
+    padding-right: 15px;
+    text-align: right;
+    color: #616161;
+    padding-top: 45px;
+}
+.shop-discounts{
+    width: 78px;
+    text-align: center;
+    padding-top: 45px;
+}
+.shop-discounts span{
+    display: inline-block;
+    padding: 1px 4px;
+    border-radius: 2px;
+    background-color: #E4393C;
+    font-size: 11px;
+    line-height: 16px;
+    color: #FFF;
+
+}
+.shop-havemoney{
+    width: 150px;
+    text-align: right;
+    padding-top: 45px;
+}
+.shop-havemoney p:nth-child(1){
+    line-height: 26px;
+    color: #E4393C;
+    font-size: 14px;
+
+}
+.shop-havemoney p:nth-child(2){
+    color: #3f9338;
+    margin-top: -4px;
+}
+.clearshop{
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    width: 72px;
+    height: 18px;
+    padding: 4px 0px 2px 0;
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: space-around
+}
+.clearshop a{
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 700;
+}
+.clearshop a:hover{
+    color: red;
+}
+
+.shop-footer{
+    background-color: #EEE;
+    height: 56px;
+    border-bottom: solid 1px #E1E1E1;
+    line-height: 56px;
+    display: flex;
+    font-size: 12px;
+}
+.shop-footer>div:nth-child(1){
+    width: 190px;
+    margin-left: 20px;
+}
+.shop-footer>div:nth-child(2){
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+}
+
+.shop-footer label{
+    display: inline-block;
+    width: 70px;
+}
+.shop-footer input{
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.allshop-list>div{
+    margin-right: 30px;
+    color: #666666;
+}
+.allshop-list>div span{
+    font-size: 16px;
+    margin-right: 5px;
+    color: #000;
+}
+.allshop-list .allshop-price{
+    font-size: 20px;
+    color: #E4393C;
+    font-weight: bold;
+}
+.shop-footer>button{
+    width:150px;
+    background-color: #E4393C;
+    color: #FFF;
+    border: none
+}
