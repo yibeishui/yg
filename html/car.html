@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,56 +10,128 @@
     <script src="../js/jquery-3.4.1.js"></script>
     <script src="../js/car.js"></script>
 </head>
+
 <body>
     <!-- 头部引入 -->
     <!-- 无商品情况 -->
     <div id="yg-car">
-            <div class="car-main">
-               <div class="car-content">
-                   <!-- 头部 -->
-                   <div class="car-content-top">
-                        <img src="../images/logo.png" alt="">
-                        <ul class="car-content-topright">
+        <div class="car-main">
+            <div class="car-content">
+                <!-- 头部 -->
+                <div class="car-content-top">
+                    <img src="../images/logo.png" alt="">
+                    <ul class="car-content-topright">
+                        <li>
+                            <span class="dwgdiff1"></span>
+                            <div>我的购物车
+                                <span class="car-span-cative"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="dwgdiff2"></span>
+                            <div>
+                                确认订单/结算
+                                <span></span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="dwgdiff3"></span>
+                            <div> 生成订单/支付
+                                <span></span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="dwgdiff4"></span>
+                            <div>
+                                完成支付
+                                <span>
+
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 购物车主要区域 -->
+                <!-- 无商品 时-->
+                <!-- <div class="car-noshop">
+                    <div></div>
+                    <div>
+                        <p>您的购物车还没有商品</p>
+                        <p class="car-tobuy">
+                            <a href="">
+                                <img src="../images/fh.gif" alt=""> 马上去购物
+                            </a>
+                            <a href="">
+                                <img src="../images/xx.gif" alt=""> 查看自己的订单
+                            </a>
+                        </p>
+                    </div>
+                </div> -->
+                <!-- 无商品结束 -->
+
+
+                <!-- 有商品 时-->
+                <div class="car-haveshop">
+                    <div class="mycar">
+                        <h4>我的购物车</h4>
+                        <div class="mycar-status">
+                            购物车状态：
+                            <span></span>
+                            <span></span>
+                            <span>（线上:
+                                <span></span>,门店：
+                                <span></span>）</span>
+                        </div>
+                        <div class="mycar-p1">查看购物车中所添加的商品；增加减少数量、并勾选确认想要购买的商品进入下一步操作。</div>
+                    </div>
+                  
+                    <div class="car-list">
+                        <!-- 头部 全选 -->
+                        <ul>
                             <li>
-                                <span class="dwgdiff1"></span>
-                                <div>我的购物车
-                                    <span class="car-span-cative"></span>
-                                </div>
+                                <input type="checkbox">全选
                             </li>
+                            <li>商品</li>
+                            <li>数量</li>
+                            <li>单价</li>
+                            <li>优惠</li>
+                            <li>金额</li>
+                        </ul>
+
+                        <!-- 购物车商品 -->
+                        <ul>
                             <li>
-                                    <span class="dwgdiff2"></span>
+                                <p></p>
                                 <div>
-                                        确认订单/结算
+                                    <!-- 多选框 -->
+                                    <input type="checkbox">
+                                    <!-- 商品 图片与名称 -->
+                                    <div></div>
+                                    <!-- 数量 -->
+                                    <div>
                                         <span></span>
-                                </div>
-                            </li>
-                            <li>
-                                    <span class="dwgdiff3"></span>
-                                <div> 生成订单/支付
-                                    <span></span>
-                                </div>
-                            </li>
-                            <li>
-                                    <span class="dwgdiff4"></span>
-                                <div>
-                                    完成支付
-                                    <span>
-                                       
-                                    </span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <!-- 价格 -->
+                                    <div></div>
+                                    <!-- 优惠 -->
+                                    <div></div>
+                                    <!-- 金额 -->
+                                    <div></div>
                                 </div>
                             </li>
                         </ul>
-                   </div>
-
-                   <!-- 购物车主要区域 -->
-                   <!-- 无商品 时-->
-                   <!-- 有商品 时-->
-               </div>
-
+                    </div>
+                </div>
             </div>
+
+        </div>
     </div>
     <!-- 足迹 -->
     <!-- 脚部 -->
-    
+
 </body>
+
 </html>

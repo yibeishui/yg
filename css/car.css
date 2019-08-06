@@ -3,7 +3,9 @@
     margin: 0;
     list-style: none;
 }
-
+a{
+    text-decoration: none;
+}
 .car-content{
     width: 1200px;
     margin: 0 auto;
@@ -15,6 +17,7 @@
     align-items: center;
 
 }
+
 .car-content-top img{
     height: 68px;
 }
@@ -66,3 +69,70 @@ transform: translate(-50%,-50%);
     box-shadow: 0 0 3px #000;
  
 }
+/* 没有商品 */
+
+.car-noshop{
+    width: 480px;
+    height: 340px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+}
+.car-noshop>div:nth-child(1){
+    width: 128px;
+    height: 128px;
+    background: url("../images/cart_bg.png");
+    background-position: -100px -50px;
+}
+.car-noshop>div:nth-child(2){
+    flex: 1;
+    padding-left: 50px;
+}
+.car-noshop div p{
+    height: 30px;
+    line-height: 30px;
+    font-size: 22px;
+    color: #777777;
+    margin-bottom: 30px;
+}
+.car-tobuy{
+    display: flex;
+}
+.car-tobuy a{
+  display: inline-block;
+  color: #ffffff;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 12px;
+  border-radius: 3px;
+}
+.car-tobuy a:nth-child(1){
+   background: #00acac;
+   margin-right: 10px;
+}
+.car-tobuy a:nth-child(2){
+    background: #b6c2c9;
+ }
+/*  */
+/* 有商品 */
+.mycar>h4{
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+    color: #616161;
+}
+.mycar-status{
+    float: right;
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px;
+    color: #616161;
+}
+.mycar-p1{
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    color: #bfbfbf;
+}
+/*  */
