@@ -218,7 +218,7 @@ color: red;
 }
 .yg-nav-shop{
     position: absolute;
-    z-index:999px;
+    z-index:999;
     width: 180px;
     padding: 19px 0 19px 12px;
     height: 480px;

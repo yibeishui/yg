@@ -4,27 +4,46 @@ $(function () {
     let re;
     let msUl;
     let ulList;
-
-    $(".model-header").load("./model/Mhead-top.html");
-    $(".model-search").load("./model/Msearch.html");
+    let navul
 
     //效果未实现 图片划过移动 标签划过颜色变红 ico图标未导入 点击事件跳转未实现
     new Promise((reslove, reject) => {
-        $.ajax({
-            type: "post",
-            url: "../json/nav.json",
-            success(res) {
-                //渲染一级导航
-                re = res;
-                let navul = $(".yg-nav-shop");
-                $.nav(navul);
-              
-                reslove();
-            }
+        $(".model-header").load("./model/Mhead-top.html");
+        $(".model-search").load("./model/Msearch.html",function(){
+            navul = $(".yg-nav-shop")
+            
+            reslove();
+        });
+
+    
+       
+    }).then(function(){
+        return new Promise(function(reslove,reject){
+
+            $.ajax({
+                type: "post",
+                url: "../json/nav.json",
+                success(res) {
+                    //渲染一级导航
+                    re = res;
+                    // let navul = $(".yg-nav-shop");
+                    console.log(navul);
+                    $.nav(navul,res);
+
+                    reslove()
+                    // reslove();
+                }
+            })
+
+
+           
+
+
+     
         })
     }).then(function () {
         return new Promise(function (reslove, reject) {
-          
+  
             //秒杀区的渲染
             // console.log(re[0].miaosha);
             msUl = $('.yg-miaosha-ul');

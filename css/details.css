@@ -1,4 +1,4 @@
-*{
+/* *{
     padding: 0%;
     margin: 0%;
     list-style: none;
@@ -21,7 +21,7 @@ a{
 }
 .fr{
     float: right;
-}
+} */
 /*  */
 .shopping-guide{
     height: 51px;
@@ -52,7 +52,7 @@ position: relative;
     position: relative;
     overflow: hidden;
     background: #ffffff;
-    z-index:9999;
+    z-index:99;
     
 box-sizing:border-box;
 }
@@ -297,6 +297,7 @@ margin-right: 5px;
 /*  */
 .detail-item{
     min-height: 540px;
+    margin-bottom: 15px;
     border: 1px solid red;
 }
 .detail-item li{

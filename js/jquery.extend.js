@@ -1,14 +1,14 @@
 (function ($) {
     $.extend({
         // 导航栏渲染 
-        nav: function (navul) {
-            $.ajax({
-                type: "post",
-                url: "../json/nav.json",
-                success(res) {
+        nav: function (navul,res) {
+            // $.ajax({
+            //     type: "post",
+            //     url: "../json/nav.json",
+            //     success(res) {
                     //渲染一级导航
                     // re = res;
-                    console.log(res);
+                    console.log(navul);
 
                     res[0].one.forEach(e => {
                         let ll = '';
@@ -54,8 +54,8 @@
                 }
             });
 
-        }
-    })
+        // }
+    // })
 
 
 })(jQuery)

@@ -1,4 +1,56 @@
 $(function(){
+    let navul
+    new Promise((reslove, reject) => {
+
+        $(".modle-head").load("./model/Mhead-top.html");
+        $(".modle-search").load("./model/Msearch.html", function () {
+            navul = $(".yg-nav-shop");
+            // 导航栏变化 划过显示背景白
+            navul.css({
+                        background:"#ffffff",
+                        display:"none",
+                        boxShadow:"0 0 2px #cc0"
+                    });
+                                    
+                    navul.children("a").css("color","#000");
+
+                    $(".yg-navshopall").hover(function(){
+                        navul.css("display","block");
+                        console.log(  navul.children("li").children("a").css("color","#000"));
+                    },function(){
+                        navul.css("display","none")
+                    })
+
+
+            reslove()
+        });
+    
+    }).then(function(){
+        return new Promise((reslove, reject)=>{
+            $.ajax({
+                type: "post",
+                url: "../json/nav.json",
+                success(res) {
+                    //渲染一级导航
+            
+                    $.nav(navul,res);
+                    reslove()
+                    // reslove();
+                }
+            })
+        })
+    }).then(function(){
+        return new Promise((reslove, reject)=>{
+         
+        })
+    })
+
+
+
+
+
+
+
     // let magnifier=$(".xiangqing-shopimg");
 
     //插件放大镜使用
