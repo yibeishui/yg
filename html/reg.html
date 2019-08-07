@@ -25,11 +25,17 @@
                 <div class="reg-content-left">
                     <div class="reg-title">手机注册</div>
                     <div class="reg-usercontent">
-                        <div class="user-phone"><p>手机号：</p><input type="text" name="" id="userphone" placeholder="请输入手机号码"></div>
+                        <div class="user-phone">
+                            <p>手机号：</p><input type="text" name="" id="userphone" placeholder="请输入手机号码" maxlength="11">
+                            <div class="phone-err"><span class=""></span></div>
+                        </div>
                         <div class="userphone-yzm">
                             <span></span>点击发送验证码
                         </div>
-                        <div class="user-tyxieyi"><input type="checkbox" name="" id="">阅读并同意<a href="">《服务协议》</a></div>
+                        <div class="user-tyxieyi">
+                            <input type="checkbox" name="" id="fwxy">阅读并同意<a href="">《服务协议》</a>
+                            <div class="phone-err"></div>
+                        </div>
                     </div>
                 </div>
                 <!-- you -->

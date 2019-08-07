@@ -82,11 +82,27 @@ font-size: 18px;
     line-height: 52px;
     font-size: 16px;
     color: #666666;
+    position: relative;
 }
 .user-phone p{
     width:108px;
     text-align: center;
 
+}
+.phone-err{
+    position: absolute;
+    color: #000;
+    line-height: 24px;
+    background: #FFF5D9 no-repeat 0 0;
+    text-align: left;
+    white-space: nowrap;
+    height: 24px;
+    padding: 8px 12px 8px 24px;
+    font-size: 14px;
+    z-index: 2;
+    top: 5px;
+    left: 300px;
+    display: none;
 }
 #userphone{
     width: 290px;
@@ -119,6 +135,7 @@ font-size: 18px;
 }
 .user-tyxieyi {
     font-size: 14px;
+    position: relative;
 }
 .user-tyxieyi input{
 

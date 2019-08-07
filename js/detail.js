@@ -19,26 +19,17 @@ $(function () {
 
     new Promise((reslove, reject) => {
 
-        $(".modle-head").load("./model/Mhead-top.html");
+        $(".modle-head").load("./model/Mhead-top.html",function(){
+            $(".tomain").html(`<span class="iconfont icon-shouye"></span><a href="">返回首页</a>`)
+            $(".tomain").css("marginRight","10px").children().css("marginRight","5px")
+            $(".tomain").hover(function(){
+                $(this).css("color","red").find("a").css("color","red")
+            },function(){
+                $(this).css("color","#000").find("a").css("color","#000")
+            })
+        });
         $(".modle-search").load("./model/Msearch.html", function () {
-            navul = $(".yg-nav-shop");
-            // 导航栏变化 划过显示背景白
-            navul.css({
-                        background:"#ffffff",
-                        display:"none",
-                        boxShadow:"0 0 2px #cc0"
-                    });
-                                    
-                    navul.children("a").css("color","#000");
-
-                    $(".yg-navshopall").hover(function(){
-                        navul.css("display","block");
-                        console.log(  navul.children("li").children("a").css("color","#000"));
-                    },function(){
-                        navul.css("display","none")
-                    })
-
-
+            navul = $(".yg-nav-shop");                 
             reslove()
         });
     
@@ -51,8 +42,28 @@ $(function () {
                     //渲染一级导航
             
                     $.nav(navul,res);
-                    reslove()
-                    // reslove();
+  
+                        // 导航栏变化 划过显示背景白
+            navul.css({
+                background:"#ffffff",
+                display:"none",
+                boxShadow:"0 0 2px #cc0"
+            });
+            navul.css("color","#000")    
+            navul.children("li").children("a").css("color","#000");       
+            $(".yg-navshopall").hover(function(){
+                navul.css("display","block");
+
+            },function(){
+                navul.css("display","none")
+            })
+            navul.children("li").children("a").hover(function(){
+                $(this).css("color","red")
+            },function(){
+                $(this).css("color","#000")
+            })
+
+            reslove()  
                 }
             })
         })
