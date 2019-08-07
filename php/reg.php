@@ -5,22 +5,17 @@ $phone=$_REQUEST["phone"];
 // 如果没有注册 返回成功  
 
 $db=mysqli_connect("127.0.0.1","root","","yg");
-
+// $re = mysql_query(select * from qianwe_dj where CD_Url='".$name."');
 //需修改 只查询
-$sql="INSERT INTO `users` (`phone`) VALUES ('$phone')";
-$result = mysqli_query($db, $sql);
-// var_dump($result);
-$data = array("status"=>"", "msg"=>"", "data"=>"");
-if($result)
-{
-  $data["status"] = "success";
- 
-  $data["msg"] = "恭喜你，注册成功！";
+// $sql="SELECT phone FROM users where phone='"$phone"'";
+
+$result = "SELECT * FROM users where phone=$phone";
+$res=mysqli_query($db,$result);
+if( mysqli_num_rows($res)=="0"){
+   echo "success";
 }else{
-  $data["status"] = "error";
-  $data["msg"] = "手机号码已存在！";
+  echo "用户已存在";
 }
-echo json_encode($data,true);
 
 
 ?>
