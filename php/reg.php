@@ -11,6 +11,7 @@ $db=mysqli_connect("127.0.0.1","root","","yg");
 
 $result = "SELECT * FROM users where phone=$phone";
 $res=mysqli_query($db,$result);
+
 if( mysqli_num_rows($res)=="0"){
    echo "success";
 }else{

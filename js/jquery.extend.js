@@ -13,7 +13,7 @@
                     res[0].one.forEach(e => {
                         let ll = '';
                         e.forEach(el => {
-                            ll += `<a href="">${el}</a> / `
+                            ll += `<a href="" class="nav1-a1">${el}</a> / `
                         })
                         let lll = ll.slice(0, -2);
                         navul.append($(`<li>${lll}<div class="yg-nav-listtit"></div></li>`));
@@ -29,9 +29,9 @@
                             let ress;
 
                             ress = el.twocon.map(ele => {
-                                return `<dd><a href="">${ele}</a></dd>`
+                                return `<dd><a href="" class="nav1-a2">${ele}</a></dd>`
                             }).join("");
-                            ss.append($(`<dl><dt><a href="">${el.twotitle}<span>></span></a></dt><div class="yg-nav-listdd">${ress}</div></dl>`))
+                            ss.append($(`<dl><dt><a href="" class="nav1-a11">${el.twotitle}<span>></span></a></dt><div class="yg-nav-listdd">${ress}</div></dl>`))
                         })
                         $(e).append(ss);
                         $(e).append(`<div class="yg-nav-listdiv3 fr"><div>`);

@@ -136,6 +136,12 @@ background-position:0 -157px;
     opacity: 0.5;
     top: 61px;
     display: none;
+    font-size: 12px;
+    line-height: 18px;
+    color: red;
+}
+.login-password{
+    position: relative;
 }
 .login-password label{
     background-position:-48px -157px;
@@ -170,10 +176,55 @@ color: #777;
 
  
 }
+.tologin1{
+    width: 308px;
+    height: 42px;
+    border: 1px solid rgba(22,189,83,1);
+    border-radius: 20px;
+    line-height: 42px;
+    font-size: 14px;
+    color: #666;
+position: relative;
+    margin-bottom: 24px;
+ 
+}
+.tologin-time{
+    position: absolute;
+    top: 32px;
+    font-size: 12px;
+}
+.tologin-time span{
+    color: red;
+
+}
+.tologin-div1{
+    position: absolute;
+    height: 18px;
+    width: 306px;
+    background: #e93854;
+    opacity: 0.5;
+    top: 40px;
+    display: none;
+    font-size: 12px;
+    line-height: 18px;
+    color: red;
+}
 .userlogin-tophone .tologin {
     margin-bottom: 24px;
 }
+.tologin1>span{
+    /* margin-top: 8px; */
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background:  rgba(22,189,83,1);
+    border-radius: 50%;
+    border:5px solid rgb(50, 245, 121);
+    margin-left: 25px;
+    margin-right: 60px;
+    vertical-align: middle;
 
+}
 .tologin span{
     /* margin-top: 8px; */
     display: inline-block;
@@ -187,9 +238,7 @@ color: #777;
     vertical-align: middle;
 
 }
-.userlogin-tophone .tologin span{
-    margin-right: 60px;
-}
+
 .login-bottom{
     height: 32px;
     text-align: center;
@@ -198,7 +247,17 @@ color: #777;
     font-size: 20px;
     color: #fff;
 }
+.login1-p1{
+    font-size: 12px;
+    line-height: 12px;
+    height: 12px;
+  
+    color: #666;
+    display: none;
+    position: absolute;
+    top: 65px;
 
+}
 
 /*  */
 .login-usercontent-bottom{
@@ -263,9 +322,60 @@ color: #777;
     opacity: 0.3;
    
 }
-.fr{
-    float: right;;
+
+
+.yzmcw1{
+    display: none;
 }
+.yzmcw1>div:nth-child(2){
+    position: absolute;
+    z-index: 19891017;
+    top: 161.5px;
+    left: 578.5px;
+    width: 266px;
+    background: #ffffff;
+    box-shadow: 0 0 3px #666666;
+    font-size: 12px;
+}
+.yzmcw1>div p{
+  
+    padding: 10px;
+    line-height: 22px;
+    border-bottom: 1px solid #cccccc;
+
+}
+.yzmcw-div1{
+    padding: 10px;
+    line-height: 40px;
+    border-bottom: 1px solid #cccccc;
+}
+.yzmcw-div2 button{
+    width: 60px;
+    height: 40px;
+    background: blue;
+    color: #ffffff;
+    border-color: blue;
+    opacity: 1
+}
+.timrspan{
+    background: green;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 20px;
+    
+}
+.yzmcw{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 19891015;
+    background-color: #000;
+    opacity: 0.3;
+   
+}
+
 .yzmcw1{
     display: none;
 }

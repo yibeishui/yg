@@ -24,6 +24,18 @@ $(function () {
                     // let navul = $(".yg-nav-shop");
                     console.log(navul);
                     $.nav(navul,res);
+                    navul.on("click",".nav1-a1",function(e){
+                        e.preventDefault();
+                        console.log($(this).text());
+                        location.href=`./detail.html?tit1=${$(this).text()}`
+                        
+                    })
+                    navul.on("click",".nav1-a11",function(e){
+                        e.preventDefault();
+                        console.log($(this).text().slice(0,-1));
+                        location.href=`./detail.html?tit1=${$(this).text().slice(0,-1)}`
+                        
+                    })
 
                     reslove()
                     // reslove();

@@ -15,12 +15,10 @@ $(function () {
     //     let yy = {type,middletype, smalltype,img, price, youhui, tit, tit, titcon, turnover, pinlun, shorw, shop };
     //     arr1.push(yy);
     // })
-    let navul
-
+    let navul;
     new Promise((reslove, reject) => {
-
         $(".modle-head").load("./model/Mhead-top.html",function(){
-            $(".tomain").html(`<span class="iconfont icon-shouye"></span><a href="">返回首页</a>`)
+            $(".tomain").html(`<span class="iconfont icon-shouye"></span><a href="./head.html">返回首页</a>`)
             $(".tomain").css("marginRight","10px").children().css("marginRight","5px")
             $(".tomain").hover(function(){
                 $(this).css("color","red").find("a").css("color","red")
@@ -39,10 +37,8 @@ $(function () {
                 type: "post",
                 url: "../json/nav.json",
                 success(res) {
-                    //渲染一级导航
-            
-                    $.nav(navul,res);
-  
+                    //渲染一级导航        
+                    $.nav(navul,res); 
                         // 导航栏变化 划过显示背景白
             navul.css({
                 background:"#ffffff",
@@ -69,6 +65,11 @@ $(function () {
         })
     }).then(function(){
         return new Promise((reslove, reject)=>{
+//渲染
+
+
+
+
             $(".shopping-guide").on("mouseenter", ".shopping-guide-item", function () {
                 $(this).css({
                     borderColor: "red",
