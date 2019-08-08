@@ -8,11 +8,21 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/login.css">
     <script src="../js/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="../css/model/Mfoot.css">
+    <script src="../js/cookie.js"></script>
     <script src="../js/login.js"></script>
 </head>
 
 <body>
     <div id="yg-login">
+            <div class="yzmcw1">
+                    <div class="yzmcw"></div>
+                    <div>
+                        <p><span>提示信息</span><span class="fr close">X</span></p>
+                        <div class="yzmcw-div1">动态验证码错误或者已过期，重新输入</div>
+                        <div class="yzmcw-div2"><button class="fr closebutton">确认</button></div>
+                    </div>
+                </div>
         <header>
             <div class="yg-content1">
                 <img src="../images/logo.png" alt="">
@@ -37,7 +47,7 @@
                                 <div class="userlogin-con login-username"> <label for="username"></label><input type="text" name="" id="username" placeholder="手机号/会员/邮箱"></div>
                                 <div class="userlogin-con login-password"> <label for="password"></label><input type="text" name="" id="password" placeholder="输入账户密码"></div>
                                 <div class="user-miandenglu">
-                                    <input type="checkbox">七天自动登陆
+                                    <input type="checkbox" class="sevencheck">七天自动登陆
                                     <a href="" class="fr">忘记密码</a>
                                 </div>
                                 <div class="tologin">
@@ -47,11 +57,11 @@
 
                             </div>
                             <div class="userlogin-tophone login-modes-div">
-                                    <div class="userlogin-con login-username"> <label for="username"></label><input type="text" name="" id="username" placeholder="可填写已注册的手机号接收短信"></div>
+                                    <div class="userlogin-con login-username"> <label for="userphone"></label><input type="text" name="" id="userphone" placeholder="可填写已注册的手机号接收短信"></div>
                                     <div class="tologin">
                                             <span></span>点击发送验证码
                                         </div>
-                                    <div class="userlogin-con login-password"> <label for="password"></label><input type="text" name="" id="password" placeholder="输入6位手机动态密码"></div>
+                                    <div class="userlogin-con login-password"> <label for="password1"></label><input type="text" name="" id="password1" placeholder="输入6位手机动态密码"></div>
                                     <div class="login-bottom">登陆</div>
                                     
                                     
@@ -74,6 +84,7 @@
             </div>
         </main>
         <!-- 脚部模块 -->
+        <div class="module-foot"></div>
     </div>
 </body>
 

@@ -16,9 +16,67 @@ $(".login-modes").click(function(e){
     })
 })
 
+$(".module-foot").load("./model/Mfoot.html .yg-footbottom");
+
+//获取
+let  username=$("#username");   //用户名 手机号 邮箱等
+let password=$("#password")       //第一页 的密码
+
+let userphone=$("#userphone")
+let password1=$("#password1")
+
+
+//第一页登录时
+$(".tologin").click(function(){
+
+    let nametext=$.trim(username.val());
+    let passwordtext=$.trim(password.val());
+    let check7=$(".sevencheck").prop("checked");
+    $.ajax({
+        type:"post",
+        url:"../php/login.php",
+        data:{
+            "username":nametext,
+            "password":passwordtext
+        },
+        success(res){
+            let result=JSON.parse(res);
+        //  console.log(res["status"]);
+         if(result["status"]=="success"){
+            let regxx={"name":nametext,"password":passwordtext};
+            let regxxstr=JSON.stringify(regxx);
+            if(check7){
+                Cookie.setItem("regname",regxxstr,7);
+            }else{
+                Cookie.setItem("regname",regxxstr);
+            }        
+            //   console.log(Cookie.getItem("regname"));
+            location.href=`../html/loginmain.html?name=${nametext}`
+              
+         }else{
+            $(".yzmcw1").css("display","block");
+            $(".close").click(function(){
+             $(".yzmcw1").css("display","none")
+            });
+            $(".closebutton").click(function(){
+                $(".yzmcw1").css("display","none") 
+            })
+         }
+           
+        }
+    })
 
 
 
+})
+
+
+
+
+//第二页登录时
+$(".login-bottom").click(function(){
+    
+})
 
 
 

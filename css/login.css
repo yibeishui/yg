@@ -239,3 +239,58 @@ color: #777;
   position: absolute;
   left: -346px;
 }
+
+.yzmcw{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 19891015;
+    background-color: #000;
+    opacity: 0.3;
+   
+}
+.fr{
+    float: right;;
+}
+.yzmcw1{
+    display: none;
+}
+.yzmcw1>div:nth-child(2){
+    position: absolute;
+    z-index: 19891017;
+    top: 161.5px;
+    left: 578.5px;
+    width: 266px;
+    background: #ffffff;
+    box-shadow: 0 0 3px #666666;
+    font-size: 12px;
+}
+.yzmcw1>div p{
+  
+    padding: 10px;
+    line-height: 22px;
+    border-bottom: 1px solid #cccccc;
+
+}
+.yzmcw-div1{
+    padding: 10px;
+    line-height: 40px;
+    border-bottom: 1px solid #cccccc;
+}
+.yzmcw-div2 button{
+    width: 60px;
+    height: 40px;
+    background: blue;
+    color: #ffffff;
+    border-color: blue;
+    opacity: 1
+}
+.timrspan{
+    background: green;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 20px;
+    
+}

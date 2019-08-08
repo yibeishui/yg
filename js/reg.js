@@ -37,7 +37,7 @@ $(function () {
 
                         // 成功=》发送验证码=》匹配验证码
 
-                        console.log(res);
+                        // console.log(res);
                         if (res == "success") {
 
                             // 短信验证  始
@@ -67,15 +67,16 @@ $(function () {
                               
                               $.ajax({
                                   type: 'post',
-                                  url: 'http://route.showapi.com/28-2',
+                                  url: 'http://route.showapi.com/28-1',
                                   dataType: 'json',
                                   data: {
-                                      "showapi_timestamp": formatterDateTime(),
-                                      "showapi_appid": '102033', //这里需要改成自己的appid
-                                      "showapi_sign": '5c341f6e8810402cb0f880bc20eed529',  //这里需要改成自己的应用的密钥secret
-                                      "content":`{"code":[央广小品],您正在通过手机注册会员，验证码是:${msgCodeText}}`,
-                                      "mobile": phone,  
-                                      "tNum": "T150606060601",
+                                    "showapi_timestamp": formatterDateTime(),
+                                    "showapi_appid": '102033', //这里需要改成自己的appid
+                                    "showapi_sign": '5c341f6e8810402cb0f880bc20eed529',  //这里需要改成自己的应用的密钥secret
+                                    "mobile": phone,
+                                    "content":`{"code":${msgCodeText},"minute":"3","comName":"奶牛养殖公司"}`,
+                                    "tNum":"T150606060601",
+                                    "big_msg":""
                                      
                                   },
                               
@@ -84,7 +85,7 @@ $(function () {
                                   },
                                   success: function(result) {
                                       console.log(result) //console变量在ie低版本下不能用
-                                      alert(result.showapi_res_code)
+                                    //   alert(result.showapi_res_code)
                                   }
                               });
                             let yzmtimeout=$(".reg-yzmtimeout");
@@ -209,7 +210,7 @@ $(function () {
                                    },
                                    url:"../php/okreg.php",
                                    success(res){
-                                       console.log(res);
+                                    //    console.log(res);
                                      let result=  JSON.parse(res);
                                      if(result["status"]=="success"){
                                         window.location.href="http://localhost/gityg/yg/html/login.html";
