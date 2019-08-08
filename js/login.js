@@ -22,8 +22,6 @@ $(".module-foot").load("./model/Mfoot.html .yg-footbottom");
 let  username=$("#username");   //用户名 手机号 邮箱等
 let password=$("#password")       //第一页 的密码
 
-let userphone=$("#userphone")
-let password1=$("#password1")
 
 
 //第一页登录时
@@ -72,10 +70,26 @@ $(".tologin").click(function(){
 
 
 
-
+let userphone=$("#userphone")
+let password1=$("#password1")
+let phoneReg = /^1[3-9]\d{9}$/;
 //第二页登录时
-$(".login-bottom").click(function(){
+$("tologin".click(function(){
+    let phonetext=$.trim(userphone.val());
+if(phonetext==""){
+
+}else if(){
+
+}else{
     
+}
+})
+$(".login-bottom").click(function(){
+
+    
+
+
+
 })
 
 
