@@ -142,6 +142,81 @@ font-size: 18px;
     margin-right: 8px;
     vertical-align: middle;
 }
+
+/*  */
+.reg-content-left .reg-userreg{
+    
+    display: none;
+
+}
+.reg-content-left .reg-userreg .reg-userregbox{
+    margin-left: 80px;
+    width: 400px;
+    margin-top:54px;
+    color: #757575;
+
+}
+.reg-userregbox>div{
+    height: 50px;
+    line-height: 50px;
+    font-size: 12px;
+}
+.reg-yzmtime{
+    color: #999999;
+}
+.reg-yzmtime span{
+    color: red;
+    font-weight: bold;
+}
+.reg-userregbox .reg-inputbox{
+    display: flex;
+    border: 1px solid #cccccc;
+    position: relative;
+
+}
+.reg-inputbox>div{
+    position: absolute;
+    color: #000;
+    line-height: 24px;
+    background: #FFF5D9 no-repeat 0 0;
+    text-align: left;
+    white-space: nowrap;
+    height: 24px;
+    padding: 8px 12px 8px 24px;
+
+    z-index: 2;
+    top: 5px;
+    left: 300px;
+    display: none;
+}
+.reg-userregbox .reg-inputboxlast{
+    border-top: none;
+    margin-bottom: 15px;
+}
+
+.reg-userregbox .reg-inputbox label{
+    width: 100px;
+    padding-left: 20px;
+    box-sizing: border-box;
+
+}
+.reg-userregbox .reg-inputbox input{
+    width: 100px;
+    flex: 1;
+    outline: none;
+    border: none;
+}
+.reg-ok{
+height: 42px;
+background:#ff500b;
+color: #ffffff;
+font-size: 16px;
+text-align: center;
+line-height: 42px;
+
+}
+/*  */
+
 .reg-content-right{
     padding: 20px 0 0 19px;
     border-left: solid 1px #E6E6E6;
@@ -185,4 +260,59 @@ font-size: 18px;
 }
 .reg-content-right .reg-span4{
     background-position: -122px -77px;
+}
+
+.yzmcw{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 19891015;
+    background-color: #000;
+    opacity: 0.3;
+   
+}
+.fr{
+    float: right;;
+}
+.yzmcw1{
+    display: none;
+}
+.yzmcw1>div:nth-child(2){
+    position: absolute;
+    z-index: 19891017;
+    top: 161.5px;
+    left: 578.5px;
+    width: 266px;
+    background: #ffffff;
+    box-shadow: 0 0 3px #666666;
+    font-size: 12px;
+}
+.yzmcw1>div p{
+  
+    padding: 10px;
+    line-height: 22px;
+    border-bottom: 1px solid #cccccc;
+
+}
+.yzmcw-div1{
+    padding: 10px;
+    line-height: 40px;
+    border-bottom: 1px solid #cccccc;
+}
+.yzmcw-div2 button{
+    width: 60px;
+    height: 40px;
+    background: blue;
+    color: #ffffff;
+    border-color: blue;
+    opacity: 1
+}
+.timrspan{
+    background: green;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 20px;
+    
 }

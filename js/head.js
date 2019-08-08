@@ -1,11 +1,9 @@
 
-$(function () {
-   
+$(function () {  
     let re;
     let msUl;
     let ulList;
     let navul
-
     //效果未实现 图片划过移动 标签划过颜色变红 ico图标未导入 点击事件跳转未实现
     new Promise((reslove, reject) => {
         $(".model-header").load("./model/Mhead-top.html");
@@ -13,10 +11,7 @@ $(function () {
             navul = $(".yg-nav-shop")
             
             reslove();
-        });
-
-    
-       
+        });   
     }).then(function(){
         return new Promise(function(reslove,reject){
 
@@ -34,12 +29,6 @@ $(function () {
                     // reslove();
                 }
             })
-
-
-           
-
-
-     
         })
     }).then(function () {
         return new Promise(function (reslove, reject) {
