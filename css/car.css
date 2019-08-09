@@ -344,3 +344,10 @@ margin-right: 15px;
     color: #FFF;
     border: none
 }
+.dele{
+    display: inline-block;
+    padding: 0 10px;
+}
+.dele:hover{
+    color: red
+    }    

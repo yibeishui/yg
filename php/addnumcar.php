@@ -1,7 +1,7 @@
 <?php
 
-$con = mysqli_connect("127.0.0.1", "root", "", "yg");
-$listid = $_REQUEST["listid"];
+ $con = mysqli_connect("127.0.0.1", "root", "", "yg");
+ $listid = $_REQUEST["listid"];
 
    $sql = "SELECT * FROM  carlist WHERE listid = '$listid'";
    $result = mysqli_query($con,$sql);
