@@ -242,6 +242,7 @@ line-height: 28px;
     color: #e4393c;
 }
 .shop-moreinfo-huodong{
+    height: 34px;;
    line-height: 34px;
     display: flex;
     justify-content: space-between;
@@ -259,6 +260,13 @@ line-height: 28px;
 }
 .shop-moreinfo-huodong >div:nth-child(2){
     font-size: 12px;
+    display: flex;
+    
+}
+.endtime{
+    margin-left: 10px;
+    color: #ffff00;
+    font-weight: bold
 }
 
 /*  */
@@ -399,11 +407,19 @@ color: #F2DCBC;
 
 
 }
-.xiangqing-youlike-ul img{
+.xiangqing-youlike-ul li{
+    height: 148px;
+  
+}
+
+.xiangqing-youlike-ul-img{
+    display: block;
     width: 120px;
     height: 120px;
+  
 
 }
 .xiangqing-youlike-ul >p{
     height: 20px;
+    text-align: center;
 }

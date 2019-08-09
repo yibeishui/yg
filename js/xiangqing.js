@@ -1,5 +1,6 @@
 $(function(){
-    let navul
+    let navul;
+
     new Promise((reslove, reject) => {
 
         $(".modle-head").load("./model/Mhead-top.html",function(){
@@ -27,6 +28,12 @@ $(function(){
                     //渲染一级导航
             
                     $.nav(navul,res);
+                  
+                    $.navto(navul);
+                    $(".yg-totop").click(function(){
+                      window.scrollTo(0,0)
+                                           
+                  })
                     navul.css({
                         background:"#ffffff",
                         display:"none",
@@ -50,19 +57,33 @@ $(function(){
                     // reslove();
                 }
             })
+
+
         })
     }).then(function(){
         return new Promise((reslove, reject)=>{
+            let url=decodeURI(location.search).slice(1).split("=")[1];
+            console.log(url);
+            
+            $.ajax({
+                type: "get",
+                url: "../php/xiangqing.php",
+                data:`id=${url}`,
+                dataType:"json",
+
+                success: function(re) {
+                    // console.log(1,re);
+                     $.xiangqing(re,$(".xiangqing-shop-moreinfo"))
+                    
+                }
+           
+            });
             $.ajax({
                 type: "get",
                 url: "../json/nav.json",//获取图片url
                 // async: true,
                 success: function(re) {
-                //     <li>
-                //     <div class="small-img">
-                //         <img src="https://pic5.cnrmall.com/image/37/b2/37b21b5a9d7c848cd1fffa86f08dc6f1.jpg@60w_60h" />
-                //     </div>
-                // </li>
+           
                     //渲染数据到节点
                     $res = re[1].list[0].smallimg.map(function(item) {
                         return `<li>
@@ -73,6 +94,7 @@ $(function(){
                     }).join('');
             
                     $('.animation03').html($res);
+                    reslove()
             
           
            }
@@ -81,7 +103,44 @@ $(function(){
     
         });
 
-    // 插件放大镜使用
+
+
+
+        })
+    }).then(function(){
+
+// 加入购物车
+$(".xiangqing-shop-moreinfo").on("click",".shop-moreinfo-tocar",function(){
+   
+    console.log($(".onenewprice").text());   
+    $.ajax({
+        type:"post",
+        data:{
+            "listid":$(".shop-moreinfo-title").data("item"),
+             "price":$(".onenewprice").text()
+    },
+        dataType:"json",
+        url:"../php/car.php",
+        success(res){
+
+
+        }
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // 插件放大镜使用
 
      
     var magnifierConfig = {
@@ -94,7 +153,23 @@ $(function(){
 
     var _magnifier = magnifier(magnifierConfig);
 
+        $.ajax({
+            type:"post",
+            data:'',
+            dataType:"json",
+            url:"../php/xiangqingtg.php",
+            success(re){
+                console.log(re);
+                
+                   re.forEach(e => {
+                    let rr=   ` <li><a href="">
+                       <img src="${e.img}" alt="" class="xiangqing-youlike-ul-img">
+                       <p>￥${e.price}</p>
+                      </a></li>`
+                   $(".xiangqing-youlike-ul").append(rr)
 
+                   });
+            }
         })
     })
 

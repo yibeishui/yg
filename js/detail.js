@@ -39,6 +39,12 @@ $(function () {
                 success(res) {
                     //渲染一级导航        
                     $.nav(navul,res); 
+                    $.navto(navul);
+
+                    $(".yg-totop").click(function(){
+                        window.scrollTo(0,0)
+                                             
+                    })
                         // 导航栏变化 划过显示背景白
             navul.css({
                 background:"#ffffff",
@@ -59,6 +65,9 @@ $(function () {
                 $(this).css("color","#000")
             })
 
+
+
+
             reslove()  
                 }
             })
@@ -66,6 +75,155 @@ $(function () {
     }).then(function(){
         return new Promise((reslove, reject)=>{
 //渲染
+let url=decodeURI(location.search).slice(1);
+let res=[];
+if(url.indexOf("&")){
+   
+   let url1= url.split("&");
+  url1.forEach(el=>{
+      res.push(el.split("=")[1])
+  })
+}else{
+res.push(url.split("=")[1])
+}
+$(".shopping-guide-title").text(`"${res[res.length-1]}"`)
+
+let ulhtml=res.map(e=>{
+    return `<li class="shopping-guide-item fl">
+    <div class="shopping-guide-tit">${e}
+        <div class="shopping-guide-titicon">
+            <div class="iconfont icon-down2"></div>
+            <div class="iconfont icon-up2"></div>
+        </div>
+    </div>
+    <!-- 分类 -->
+    <ul class="shopping-guide-list">
+        <li>
+            <a href="">222</a>
+        </li>
+        <li>2222</li>
+    </ul>
+</li>`
+}).join("")
+$(".shopping-ul").html(ulhtml);
+
+
+$.ajax({
+    type:"post",
+    url:"../php/toselect.php",
+    data:{
+        cont:res[res.length-1]
+    },
+    dataType:"json",
+    success(re){
+       console.log(re);
+       
+        
+re.forEach(e=>{
+ 
+      let  ullist=   ` <li data-item="${e.id}">
+    <!-- 图片 -->
+    <!-- 价格 -->
+    <!-- 商品内容 -->
+    <div class="list-div1">
+        <a href="" class="detail-item-con">
+            <img src="${e.img}" alt="">
+            <p class="detail-item-price">
+                <span class="detail-item-pricespan">￥${e.price}</span>
+                <span class="detail-item-icon fr">${e.youhui}</span>
+            </p>
+            <p class="detail-item-title">
+                <span>${e.tit}</span>
+                <span>${e.titcon}</span>
+            </p>
+        </a>
+    </div>
+
+
+    <!-- 成交与评论 -->
+    <div class="detail-item-estimate">
+        <span>
+            <span class="item-estimate-volume">${e.turnover}</span>笔成交</span>
+        <span>
+            <span class="item-estimate-Comments">${e.pinlun}</span>条评论</span>
+    </div>
+
+    <!-- 店铺 -->
+    <p class="detail-item-shop">
+        <a href="">${e.shorw}</a>
+    </p>
+    <!-- 自营店铺？ -->
+    <p class="detail-item-autotrophy">
+        <span>${e.shop}</span>
+    </p>
+
+    <!-- 收藏与加入购物车 -->
+    <div class="detail-item-car">
+        <div class="item-toCollection">
+            <div class="icon-span1">
+                <div class="iconfont icon-xinaixin"></div>
+                <div class="iconfont icon-xin1"></div>
+            </div>
+            <span>收藏</span>
+        </div>
+        <div class="item-tocar">
+            <span class="iconfont icon-jiarugouwuche"></span>加入购物车</div>
+    </div>
+
+</li>`
+
+$(".detail-item").append(ullist)
+})
+
+$(".yeshunum").html(`<li class="fl">1</li>`)
+
+//加入购物车
+// $("")
+
+$(".detail-item").on("click",".detail-item-con",function(e){
+    e.preventDefault();   
+    location.href=`xiangqing.html?tit=${ $(this).parent().parent().data("item")}`    
+})
+$(".detail-item").on("click",".item-tocar",function(){
+    // console.log($(this).parent().siblings(".list-div1").find(".detail-item-pricespan").text().slice(1));
+    $.ajax({
+        type:"post",
+        data:{
+            "listid":$(this).parent().parent().data("item"),
+             "price":$(this).parent().siblings(".list-div1").find(".detail-item-pricespan").text().slice(1)
+    },
+        dataType:"json",
+        url:"../php/car.php",
+        success(res){
+
+
+        }
+    })
+})
+
+// 
+// $(".xiangqing-shop-moreinfo").on("click",".shop-moreinfo-tocar",function(){
+   
+//     console.log($(".onenewprice").text());   
+//     $.ajax({
+//         type:"post",
+//         data:{
+//             "listid":$(".shop-moreinfo-title").data("item"),
+//              "price":$(".onenewprice").text()
+//     },
+//         dataType:"json",
+//         url:"../php/car.php",
+//         success(res){
+
+
+//         }
+//     })
+// })
+// // 
+    }
+})
+
+
 
 
 

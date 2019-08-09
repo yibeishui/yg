@@ -40,6 +40,7 @@ a{
 width: 88px;
 height: 26px;
 border: 1px solid #cccccc;
+margin-right: 5px;
 
 
 position: relative;
@@ -296,9 +297,10 @@ margin-right: 5px;
 }
 /*  */
 .detail-item{
+    overflow: hidden;
     min-height: 540px;
     margin-bottom: 15px;
-    border: 1px solid red;
+
 }
 .detail-item li{
     float: left;
@@ -384,7 +386,7 @@ margin-right: 5px;
     display: inline-block;
     height: 16px;
     text-align: center;
-    padding: 0 3px;
+  
     margin-right: 3px;
     border-radius: 2px;
     background: #F30213;
@@ -437,4 +439,27 @@ margin-left: -1px;
 .icon-jiarugouwuche{
     margin-right: 10px;
     font-size: 18px;
+}
+.yeshudiv{
+    height: 38px; 
+}
+.yeshu{
+    height: 38px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+.yeshu li{
+    text-align: center;
+    display: block;
+    padding: 0 14px;
+    border: 1px solid #DDD;
+    background-color: #F7F7F7;
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 36px;
+    color: #AAA;
+    margin-right: 5px;
 }

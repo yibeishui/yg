@@ -24,19 +24,11 @@ $(function () {
                     // let navul = $(".yg-nav-shop");
                     console.log(navul);
                     $.nav(navul,res);
-                    navul.on("click",".nav1-a1",function(e){
-                        e.preventDefault();
-                        console.log($(this).text());
-                        location.href=`./detail.html?tit1=${$(this).text()}`
-                        
+                      $.navto(navul);
+                      $(".yg-totop").click(function(){
+                        window.scrollTo(0,0)
+                                             
                     })
-                    navul.on("click",".nav1-a11",function(e){
-                        e.preventDefault();
-                        console.log($(this).text().slice(0,-1));
-                        location.href=`./detail.html?tit1=${$(this).text().slice(0,-1)}`
-                        
-                    })
-
                     reslove()
                     // reslove();
                 }
@@ -130,6 +122,23 @@ $(function () {
                 let rr = `<img src="${re[0].smallimg[ind]}"/>`
                 $(el).append(rr)
             })
+
+
+            let str;
+            let timr = setInterval(function(){
+               let timr1=new Date();
+               let etime=new Date("2019-8-11")-timr1;
+               if(etime<=0){
+                   clearInterval(timr);
+               }
+             let shi=("0"+Math.floor(etime/1000/60/60%24)).slice(-2);
+             let fen=("0"+Math.floor(etime/1000/60%60)).slice(-2);
+             let miao=("0"+Math.floor(etime/1000%60)).slice(-2);
+             str=`<span class="time-span">${shi}</span> : <span class="time-span">${fen}</span> : <span class="time-span">${miao}</span>`;
+             $(".miaoshatime").html(str)   
+           
+             
+           },1000)
 
             reslove();
         })

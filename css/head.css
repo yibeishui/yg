@@ -171,8 +171,20 @@ font-weight: bold;
 .yg-miaosha-headerdiv2{
     font-size: 14px;
 }
+.miaoshatime{
+    color: #000;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+.time-span{
+    display: inline-block;
+    color: red;
+    background: #000;
+    border-radius: 5px;
+padding: 5px;
+font-size: 16px;
 
-
+}
 
 
 .yg-miaosha-con{
