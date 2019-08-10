@@ -146,9 +146,9 @@
                     <dl>
                         <dt>数量</dt>
                         <dd class="shop-buynumber">
-                            <span>-</span>
-                            <span>1</span>
-                            <span>+</span>
+                            <span class="delenumber">-</span>
+                            <span class="shopnewnum">1</span>
+                            <span class="addnumber">+</span>
 
                         </dd>
                         <dd>件</dd>

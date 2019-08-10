@@ -2,7 +2,7 @@
 $con = mysqli_connect("127.0.0.1", "root", "", "yg");
 $listid = $_REQUEST["listid"];
 $price = $_REQUEST["price"];
-
+$num1=$_REQUEST["num"];
 
 /* 分两种情况 */
 /* 001-第一次添加该商品  插入数据 */
@@ -13,13 +13,13 @@ $row = mysqli_num_rows($result);
 if($row == 0)
 { 
    $insetSql = "INSERT INTO `carlist` (`cartid`, `listid`, `num`, `total`,`price`,`isActive`) 
-   VALUES (NULL, '$listid', 1, '$price','$price',1)";
+   VALUES (NULL, '$listid', $num1, '$price','$price',1)";
    mysqli_query($con,$insetSql);
 
 }elseif($row == 1){
    /* 002-购物车中已经存在该商品  更新数据 */
    $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
-   $num = $data[0]["num"] + 1;
+   $num = $data[0]["num"] + $num1;
    $total = $data[0]["price"] * $num;
 
    /* 更新 */

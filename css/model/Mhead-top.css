@@ -19,9 +19,28 @@
         line-height: 35px;
       
     }
+    .yg-iflogindiv .icon-down2{
+        font-size: 12px;
+        margin-left: 10px;
+    }
+    .huiyuan{
+        display: inline-block;
+        vertical-align: middle;
+        height: 16px;
+        padding: 1px 5px;
+        border-radius: 2px;
+        background-color: #555;
+        background-image: linear-gradient(180deg, #6A6A69, #4A4948);
+        color: #FFF8B5;
+        font-size: 11px;
+        line-height: 15px;
+        font-weight: 600;
+        text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+        margin-left: 3px;
+    }
     .yg-iflogin{
         color: red;
-        margin-right: 8px;
+        margin-right: 5px;
      
     }
     .yg-reg{

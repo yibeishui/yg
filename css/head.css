@@ -68,13 +68,13 @@ a{
     align-items: center; 
 }
 .yg-navdiv{
-    width: 410px;
-    height: 70px;
+    width: 411px;
+    height: 71px;
     border: 1px solid #cccccc;
     box-sizing: border-box;
 }
 .yg-navdiv:nth-child(1){
-    margin-right: 20px;
+    margin-right: 15px;
 }
 
 .yg-navdiv:nth-child(2){

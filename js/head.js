@@ -3,10 +3,23 @@ $(function () {
     let re;
     let msUl;
     let ulList;
-    let navul
+    let navul;
+    let arrjson1=Cookie.getItem("regname")?Cookie.getItem("regname"):`[]`;
+    let regnames=JSON.parse(arrjson1);
+
+    let iflogin=false;
+    
     //效果未实现 图片划过移动 标签划过颜色变红 ico图标未导入 点击事件跳转未实现
     new Promise((reslove, reject) => {
-        $(".model-header").load("./model/Mhead-top.html");
+        $(".model-header").load("./model/Mhead-top.html",function(){
+            if(regnames.length==0){
+                iflogin=false;
+            }else{
+                iflogin=true;
+                $(".yg-iflogindiv").html(`<span>${regnames["name"]}</span><span class="huiyuan">暂无等级会员</span><span class="iconfont icon-down2"></span>`);
+            }
+            
+        });
         $(".model-search").load("./model/Msearch.html",function(){
             navul = $(".yg-nav-shop")
             

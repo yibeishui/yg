@@ -13,6 +13,7 @@ a{
 .car-content-top{
     height: 110px;
     display: flex;
+    width: 1200px;
     justify-content: space-between;
     align-items: center;
 
@@ -350,4 +351,49 @@ margin-right: 15px;
 }
 .dele:hover{
     color: red
-    }    
+}    
+.zuji{
+    margin-top: 30px;
+}
+.zuji-con{
+    border: 1px solid #000000; 
+    height: 263px;
+    border-top: 3px solid #000000;
+    padding: 0 4px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.zuji-h2{
+    color: #F30213;
+    font-weight: 600;
+    margin-left: 20px;
+    font-size: 14px;
+    line-height: 31px;
+}
+.zuji-item a{
+    display: block;
+    width: 195px;
+    height: 195px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.zuji-item>a>div{
+    height: 130px; 
+}
+.zuji-item img{
+    width: 130px;
+    height: 130px;
+}
+.zuji-item>a>p{
+    width: 140px;
+    text-align: center;
+    font-size: 12px;
+}
+.zuji-p1{
+    height: 36px;
+    line-height: 18px;
+    overflow: hidden;
+}

@@ -1,12 +1,7 @@
 <?php
 $con = mysqli_connect("127.0.0.1", "root", "", "yg");
-
-
 $ppp=$_REQUEST["id"];
-
 $result = "SELECT * FROM  `goodlist` where  id=$ppp";
-
-
 
 $res=mysqli_query($con,$result);
 
