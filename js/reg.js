@@ -1,13 +1,13 @@
 $(function () {
     let fuxy = $("#fwxy");
     fuxy.prop("checked", true);
-
+    $(".modelfoot").load("./model/Mfoot.html .yg-footbottom", function () {
+     
+    });
     $(".userphone-yzm").click(function () {
         let phone = $("#userphone").val().trim();
         let phoneReg = /^1[3-9]\d{9}$/;
         let fuyCheck = fuxy.prop("checked")
-
-
         //手机号为空时  || 同意协议为空时
 
         if (phone == "") {
@@ -100,8 +100,6 @@ $(function () {
                                     yzmtimeout.html(count);
                                 }
                             }, 1000);
-
-
 
 
 
@@ -226,12 +224,6 @@ $(function () {
                                 }
                             })
 
-
-
-
-
-
-
                         } else {
                             $(".phone-err").eq(0).css("display", "block").text(`${res}`)
                         }
@@ -246,11 +238,6 @@ $(function () {
 
 
         }
-
-
-
-
-
 
     })
 

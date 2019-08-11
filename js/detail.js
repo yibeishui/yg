@@ -16,17 +16,17 @@ $(function () {
     //     arr1.push(yy);
     // })
     let navul;
-    let arrjson1=Cookie.getItem("regname")?Cookie.getItem("regname"):`[]`;
-    let regnames=JSON.parse(arrjson1);
-    let iflogin=false;
+    let arrjson1 = Cookie.getItem("regname") ? Cookie.getItem("regname") : `[]`;
+    let regnames = JSON.parse(arrjson1);
+    let iflogin = false;
     new Promise((reslove, reject) => {
         $(".modle-head").load("./model/Mhead-top.html", function () {
-            if(regnames.length==0){
-                iflogin=false;
-            }else{
-                iflogin=true;
-                console.log(11,);
-                
+            if (regnames.length == 0) {
+                iflogin = false;
+            } else {
+                iflogin = true;
+                console.log(11, );
+
                 $(".yg-iflogindiv").html(`<span>${regnames["name"]}</span><span class="huiyuan">暂无等级会员</span><span class="iconfont icon-down2"></span>`);
             }
             $(".tomain").html(`<span class="iconfont icon-shouye"></span><a href="./head.html">返回首页</a>`)
@@ -40,6 +40,7 @@ $(function () {
         });
         $(".modle-search").load("./model/Msearch.html", function () {
             navul = $(".yg-nav-shop");
+            $.headcar()
             reslove()
         });
 
@@ -112,29 +113,29 @@ $(function () {
             }).join("")
             $(".shopping-ul").html(ulhtml);
 
-function all(php,paixu,n){
-    $(".detail-item").html("");
-    $(".yeshunum").html("");
-   window.scrollTo(0,0);
+            function all(php, paixu, n) {
+                $(".detail-item").html("");
+                $(".yeshunum").html("");
+                window.scrollTo(0, 0);
 
-    $.ajax({
-        type: "post",
-        url: php,
-        data: {
-            cont: res[res.length - 1],
-       
-            paixu       
-        },
-        dataType: "json",
-        success(re) {
-            // console.log(re);
-            // 前20渲染
-            let selere=re.splice(n,20);
-            console.log(selere);
-            
-            selere.forEach(e => {
+                $.ajax({
+                    type: "post",
+                    url: php,
+                    data: {
+                        cont: res[res.length - 1],
 
-                let ullist = ` <li data-item="${e.id}">
+                        paixu
+                    },
+                    dataType: "json",
+                    success(re) {
+                        // console.log(re);
+                        // 前20渲染
+                        let selere = re.splice(n, 20);
+                        console.log(selere);
+
+                        selere.forEach(e => {
+
+                            let ullist = ` <li data-item="${e.id}">
                 <!-- 图片 -->
                 <!-- 价格 -->
                 <!-- 商品内容 -->
@@ -185,77 +186,77 @@ function all(php,paixu,n){
 
             </li>`
 
-                $(".detail-item").append(ullist)
-            })
-            //   页数的渲染
-            for (var i = 0; i< re.length/20; i++) {                   
-            $(".yeshunum").append(`<li class="fl yeshuli">${i+1}</li>`)
+                            $(".detail-item").append(ullist)
+                        })
+                        //   页数的渲染
+                        for (var i = 0; i < re.length / 20; i++) {
+                            $(".yeshunum").append(`<li class="fl yeshuli">${i + 1}</li>`)
+                        }
+
+
+                    }
+                })
             }
+            all("../php/allselect.php", "no", 0);
+
+            let fff = true;
+
+            //   页面足迹渲染
 
 
-        }
-    })
-}
-   all("../php/allselect.php","no",0); 
-          
-   let fff=true;      
-
- //   页面足迹渲染
-
-
-let arrjson=Cookie.getItem("zuji")?  Cookie.getItem("zuji"):`[]`;
-  let zujiarr=JSON.parse(arrjson);
- if(zujiarr.length!=0){
-  let zujilistres=   zujiarr.map(e=>{
-         return `<li class="zuji-item" data-item=""><a href="">
+            let arrjson = Cookie.getItem("zuji") ? Cookie.getItem("zuji") : `[]`;
+            let zujiarr = JSON.parse(arrjson);
+            if (zujiarr.length != 0) {
+                let zujilistres = zujiarr.map(e => {
+                    return `<li class="zuji-item" data-item=""><a href="">
          <div><img src="${e.img}" alt="" class="zujiimg"></div>
          <p class="zuji-p1">${e.tit}</p>
          <p class="zuji-p2">${e.price}</p>
      </a></li>`
-     }).join("");
-     let zujidiv=` <div class="yg-content zuji-con">
+                }).join("");
+                let zujidiv = ` <div class="yg-content zuji-con">
      <div class="zuji-h2">我的足迹</div>
      <ul>
         ${zujilistres}
      </ul></div>`
- $(".zuji").html(zujidiv)
+                $(".zuji").html(zujidiv)
 
- }else{}
-       //跳转详情页  cookie记录足迹
+            } else { }
+            //跳转详情页  cookie记录足迹
 
-       $(".detail-item").on("click", ".detail-item-con", function (e) {
-        e.preventDefault();
-        let itemid=$(this).parent().parent().data("item");
-         
-         let itemstr={
-             id:itemid,
-             tit:$(this).find(".detail-item-titspan").text(),
-             img:$(this).find(".detail-img").attr("src"),
-             price:$(this).find(".detail-item-pricespan").text()
-         }
-          zujiarr.push(itemstr);
-          Cookie.setItem("zuji",JSON.stringify(zujiarr));
-        
-        location.href = `xiangqing.html?tit=${itemid}`
-      })
+            $(".detail-item").on("click", ".detail-item-con", function (e) {
+                e.preventDefault();
+                let itemid = $(this).parent().parent().data("item");
 
-   
-      
-       $(".detail-item").on("click", ".item-tocar", function () {
-        // 加入购物车
-        $.ajax({
-            type: "post",
-            data: {
-                "listid": $(this).parent().parent().data("item"),
-                "price": $(this).parent().siblings(".list-div1").find(".detail-item-pricespan").text().slice(1)
-            },
-            dataType: "json",
-            url: "../php/car.php",
-            success(res) {
+                let itemstr = {
+                    id: itemid,
+                    tit: $(this).find(".detail-item-titspan").text(),
+                    img: $(this).find(".detail-img").attr("src"),
+                    price: $(this).find(".detail-item-pricespan").text()
+                }
+                zujiarr.push(itemstr);
+                Cookie.setItem("zuji", JSON.stringify(zujiarr));
 
-            }
-        })
-    })
+                location.href = `xiangqing.html?tit=${itemid}`
+            })
+
+
+
+            $(".detail-item").on("click", ".item-tocar", function () {
+                // 加入购物车
+                $.ajax({
+                    type: "post",
+                    data: {
+                        "listid": $(this).parent().parent().data("item"),
+                        "price": $(this).parent().siblings(".list-div1").find(".detail-item-pricespan").text().slice(1)
+                    },
+                    dataType: "json",
+                    url: "../php/car.php",
+                    success(res) {
+
+                    }
+                })
+            })
 
 
             $(".shopping-guide").on("mouseenter", ".shopping-guide-item", function () {
@@ -315,26 +316,26 @@ let arrjson=Cookie.getItem("zuji")?  Cookie.getItem("zuji"):`[]`;
             });
 
             // 页面点击时(第几页) 渲染页面  、、 发送哪个请求???
-$(".yeshunum").on("click",".yeshuli",function(){
-    let yeindex=$(this).index()+1;
-    $(this).css({
-        background:"#ffffff",
-        color:"red"
-    }).siblings().css({
-        background:"#F7F7F7",
-        color:"#AAA"
-    });
-    all("../php/allselect.php",fff,yeindex); 
-    
-})
+            $(".yeshunum").on("click", ".yeshuli", function () {
+                let yeindex = $(this).index() + 1;
+                $(this).css({
+                    background: "#ffffff",
+                    color: "red"
+                }).siblings().css({
+                    background: "#F7F7F7",
+                    color: "#AAA"
+                });
+                all("../php/allselect.php", fff, yeindex);
+
+            })
 
             // 价格排序   之前为空，重新渲染
-            $(".selectprice").click(function(){
-                fff=!fff;
-                console.log(fff);               
-                all("../php/allselect.php",fff,0); 
+            $(".selectprice").click(function () {
+                fff = !fff;
+                console.log(fff);
+                all("../php/allselect.php", fff, 0);
             })
-    
+
 
 
 

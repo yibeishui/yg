@@ -1,32 +1,33 @@
 
-$(function () {  
+$(function () {
     let re;
     let msUl;
     let ulList;
     let navul;
-    let arrjson1=Cookie.getItem("regname")?Cookie.getItem("regname"):`[]`;
-    let regnames=JSON.parse(arrjson1);
+    let arrjson1 = Cookie.getItem("regname") ? Cookie.getItem("regname") : `[]`;
+    let regnames = JSON.parse(arrjson1);
 
-    let iflogin=false;
-    
+    let iflogin = false;
+
     //效果未实现 图片划过移动 标签划过颜色变红 ico图标未导入 点击事件跳转未实现
     new Promise((reslove, reject) => {
-        $(".model-header").load("./model/Mhead-top.html",function(){
-            if(regnames.length==0){
-                iflogin=false;
-            }else{
-                iflogin=true;
+        $(".model-header").load("./model/Mhead-top.html", function () {
+            if (regnames.length == 0) {
+                iflogin = false;
+            } else {
+                iflogin = true;
                 $(".yg-iflogindiv").html(`<span>${regnames["name"]}</span><span class="huiyuan">暂无等级会员</span><span class="iconfont icon-down2"></span>`);
             }
-            
+
         });
-        $(".model-search").load("./model/Msearch.html",function(){
+        $(".model-search").load("./model/Msearch.html", function () {
             navul = $(".yg-nav-shop")
-            
+            $.headcar()
+
             reslove();
-        });   
-    }).then(function(){
-        return new Promise(function(reslove,reject){
+        });
+    }).then(function () {
+        return new Promise(function (reslove, reject) {
 
             $.ajax({
                 type: "post",
@@ -36,11 +37,11 @@ $(function () {
                     re = res;
                     // let navul = $(".yg-nav-shop");
                     console.log(navul);
-                    $.nav(navul,res);
-                      $.navto(navul);
-                      $(".yg-totop").click(function(){
-                        window.scrollTo(0,0)
-                                             
+                    $.nav(navul, res);
+                    $.navto(navul);
+                    $(".yg-totop").click(function () {
+                        window.scrollTo(0, 0)
+
                     })
                     reslove()
                     // reslove();
@@ -49,7 +50,7 @@ $(function () {
         })
     }).then(function () {
         return new Promise(function (reslove, reject) {
-  
+
             //秒杀区的渲染
             // console.log(re[0].miaosha);
             msUl = $('.yg-miaosha-ul');
@@ -138,20 +139,20 @@ $(function () {
 
 
             let str;
-            let timr = setInterval(function(){
-               let timr1=new Date();
-               let etime=new Date("2019-8-11")-timr1;
-               if(etime<=0){
-                   clearInterval(timr);
-               }
-             let shi=("0"+Math.floor(etime/1000/60/60%24)).slice(-2);
-             let fen=("0"+Math.floor(etime/1000/60%60)).slice(-2);
-             let miao=("0"+Math.floor(etime/1000%60)).slice(-2);
-             str=`<span class="time-span">${shi}</span> : <span class="time-span">${fen}</span> : <span class="time-span">${miao}</span>`;
-             $(".miaoshatime").html(str)   
-           
-             
-           },1000)
+            let timr = setInterval(function () {
+                let timr1 = new Date();
+                let etime = new Date("2019-8-14") - timr1;
+                if (etime <= 0) {
+                    clearInterval(timr);
+                }
+                let shi = ("0" + Math.floor(etime / 1000 / 60 / 60 % 24)).slice(-2);
+                let fen = ("0" + Math.floor(etime / 1000 / 60 % 60)).slice(-2);
+                let miao = ("0" + Math.floor(etime / 1000 % 60)).slice(-2);
+                str = `<span class="time-span">${shi}</span> : <span class="time-span">${fen}</span> : <span class="time-span">${miao}</span>`;
+                $(".miaoshatime").html(str)
+
+
+            }, 1000)
 
             reslove();
         })

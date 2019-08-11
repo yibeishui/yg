@@ -99,52 +99,52 @@ $(function () {
             // 5c341f6e8810402cb0f880bc20eed529 短信密钥  102033 appi
             msgCodeText = parseInt(Math.random() * 1000000);
             console.log(msgCodeText);
+            //短信方式
+            function formatterDateTime() {
 
-            // function formatterDateTime() {
+                var date = new Date()
+                var month = date.getMonth() + 1
+                var datetime = date.getFullYear()
+                    + ""// "年"
+                    + (month >= 10 ? month : "0" + month)
+                    + ""// "月"
+                    + (date.getDate() < 10 ? "0" + date.getDate() : date
+                        .getDate())
+                    + ""
+                    + (date.getHours() < 10 ? "0" + date.getHours() : date
+                        .getHours())
+                    + ""
+                    + (date.getMinutes() < 10 ? "0" + date.getMinutes() : date
+                        .getMinutes())
+                    + ""
+                    + (date.getSeconds() < 10 ? "0" + date.getSeconds() : date
+                        .getSeconds());
+                return datetime;
+            }
 
-            //     var date = new Date()
-            //     var month = date.getMonth() + 1
-            //     var datetime = date.getFullYear()
-            //         + ""// "年"
-            //         + (month >= 10 ? month : "0" + month)
-            //         + ""// "月"
-            //         + (date.getDate() < 10 ? "0" + date.getDate() : date
-            //             .getDate())
-            //         + ""
-            //         + (date.getHours() < 10 ? "0" + date.getHours() : date
-            //             .getHours())
-            //         + ""
-            //         + (date.getMinutes() < 10 ? "0" + date.getMinutes() : date
-            //             .getMinutes())
-            //         + ""
-            //         + (date.getSeconds() < 10 ? "0" + date.getSeconds() : date
-            //             .getSeconds());
-            //     return datetime;
-            // }
+            $.ajax({
+                type: 'post',
+                url: 'http://route.showapi.com/28-1',
+                dataType: 'json',
+                data: {
+                    "showapi_timestamp": formatterDateTime(),
+                    "showapi_appid": '102033', //这里需要改成自己的appid
+                    "showapi_sign": '5c341f6e8810402cb0f880bc20eed529',  //这里需要改成自己的应用的密钥secret
+                    "mobile": phone,
+                    "content": `{"code":${msgCodeText},"minute":"3","comName":"央广小品"}`,
+                    "tNum": "T150606060601",
+                    "big_msg": ""
 
-            // $.ajax({
-            //     type: 'post',
-            //     url: 'http://route.showapi.com/28-1',
-            //     dataType: 'json',
-            //     data: {
-            //         "showapi_timestamp": formatterDateTime(),
-            //         "showapi_appid": '102033', //这里需要改成自己的appid
-            //         "showapi_sign": '5c341f6e8810402cb0f880bc20eed529',  //这里需要改成自己的应用的密钥secret
-            //         "mobile": phone,
-            //         "content": `{"code":${msgCodeText},"minute":"3","comName":"央广小品"}`,
-            //         "tNum": "T150606060601",
-            //         "big_msg": ""
+                },
 
-            //     },
-
-            //     error: function (XmlHttpRequest, textStatus, errorThrown) {
-            //         alert("操作失败!");
-            //     },
-            //     success: function (result) {
-            //         console.log(result) //console变量在ie低版本下不能用
-            //         //   alert(result.showapi_res_code)
-            //     }
-            // });
+                error: function (XmlHttpRequest, textStatus, errorThrown) {
+                    alert("操作失败!");
+                },
+                success: function (result) {
+                    console.log(result) //console变量在ie低版本下不能用
+                    //   alert(result.showapi_res_code)
+                }
+            });
 
             //   短信验证  完
             let yzmtimeout = $(".tologin-time");
@@ -212,10 +212,10 @@ $(function () {
                     success(res) {
                         console.log(res);
                         if (res == "用户已存在") {
-                            let regxx = { "name": phonetext};
+                            let regxx = { "name": phonetext };
                             let regxxstr = JSON.stringify(regxx);
-                            
-                                Cookie.setItem("regname", regxxstr);
+
+                            Cookie.setItem("regname", regxxstr);
                             location.href = `../html/loginmain.html`
                         } else {
                             $(".yzmcw1").css("display", "block");

@@ -2,10 +2,7 @@
     $.extend({
         // 导航栏渲染 
         nav: function (navul, res) {
-            // $.ajax({
-            //     type: "post",
-            //     url: "../json/nav.json",
-            //     success(res) {
+
             //渲染一级导航
             // re = res;
             console.log(navul);
@@ -74,32 +71,9 @@
 
             })
         },
-        // settime:function(endtime){
-        //    let str;
-        //     let timr = setInterval(function(){
-        //        let timr1=new Date();
-        //        let etime=new Date(endtime)-timr1;
-        //        if(etime==0){
-        //            clearInterval(timr);
-        //        }
-        //      let shi=("0"+Math.floor(etime/1000/60/60%24)).slice(-2);
-        //      let fen=("0"+Math.floor(etime/1000/60%60)).slice(-2);
-        //      let miao=("0"+Math.floor(etime/1000%60)).slice(-2);
-        //      str=`${shi}时${fen}分${miao}秒`;
-            
-             
-             
-        //    },1000)
-      
-        // }
-        // ,
+
         xiangqing: function (re, tt) {
-           
-        //   console.log(shi);
-      
-       
-      
-             
+
             let uu = `<div class="shop-moreinfo-title"data-item="${re[0].id}">
                 <h3>${re[0].tit}</h3>
                 <p>${re[0].titcon}</p>
@@ -172,28 +146,71 @@
 
             tt.append(uu);
             let str;
-            let timr = setInterval(function(){
-               let timr1=new Date();
-               let etime=new Date(re[0].endtime)-timr1;
-               if(etime<=0){
-                   clearInterval(timr);
-               }
-             let shi=("0"+Math.floor(etime/1000/60/60%24)).slice(-2);
-             let fen=("0"+Math.floor(etime/1000/60%60)).slice(-2);
-             let miao=("0"+Math.floor(etime/1000%60)).slice(-2);
-             str=`${shi}时${fen}分${miao}秒`;
-             $(".endtime").text(str)   
-           },1000)
-      
+            let timr = setInterval(function () {
+                let timr1 = new Date();
+                let etime = new Date(re[0].endtime) - timr1;
+                if (etime <= 0) {
+                    clearInterval(timr);
+                }
+                let shi = ("0" + Math.floor(etime / 1000 / 60 / 60 % 24)).slice(-2);
+                let fen = ("0" + Math.floor(etime / 1000 / 60 % 60)).slice(-2);
+                let miao = ("0" + Math.floor(etime / 1000 % 60)).slice(-2);
+                str = `${shi}时${fen}分${miao}秒`;
+                $(".endtime").text(str)
+            }, 1000)
 
+
+        },
+        headcar: function () {
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "../php/getcar.php",
+                success(res) {
+                    console.log(222, res);
+                    if (res == []) {
+                        $(".noshop").css("display", "block")
+                    } else {
+                        let allprice = 0;
+                        let html = res.map(e => {
+                            console.log(typeof ((e.price * 1) * (e.num) * 1));
+
+                            allprice += (e.price * 1) * (e.num) * 1;
+                            return `<div data-item="${e.id}" class="havelistitem">
+                       <img src="${e.img}" alt="">
+                   
+                   <div class="havelistitem-div1">
+                       <p>${e.tit}</p>
+                       <p>${e.type}</p>
+                   </div>
+                   <div class="havelistitem-div2">
+                       ￥
+                       <span>${e.price}</span>x
+                       <span>${e.num}</span>
+                   </div>
+                   </div>`
+                        }).join("")
+                        $(".haveshop-list").html(html)
+                        let allhtml = `<div>共
+                   <span>${res.length}</span>种商品
+                   <span>  </sapn>
+                   <span>共计：￥
+                       <span>${allprice}</span>
+                   </span>
+                    </div>
+                    <a href="car.html">去购物车</a>
+                    `
+                        $(".alllist").html(allhtml)
+
+                        $(".haveshop").css("display", "block")
+                    }
+
+                }
+            })
         }
 
+
     });
-
-
-
-    // }
-    // })
 
 
 })(jQuery)

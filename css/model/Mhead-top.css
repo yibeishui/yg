@@ -3,128 +3,117 @@
     height: 35px;
     background: #f2f2f2;
     border-top: 1px solid #F9F9F9;
-    }
+}
+
+.yg-site{
+    font-size: 12px; 
+    line-height: 35px;
+    display: flex;
+}
+
+.yg-customer-info{
+    display: flex;
+    font-size: 12px;
+    line-height: 35px;     
+}
+.yg-iflogindiv .icon-down2{
+    font-size: 12px;
+    margin-left: 10px;
+}
+.huiyuan{
+    display: inline-block;
+    vertical-align: middle;
+    height: 16px;
+    padding: 1px 5px;
+    border-radius: 2px;
+    background-color: #555;
+    background-image: linear-gradient(180deg, #6A6A69, #4A4948);
+    color: #FFF8B5;
+    font-size: 11px;
+    line-height: 15px;
+    font-weight: 600;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+    margin-left: 3px;
+}
+.yg-iflogin{
+    color: red;
+    margin-right: 5px;
     
-    .yg-site{
-        font-size: 12px; 
-     line-height: 35px;
-     display: flex;
-    }
-    
-    
-    
-    .yg-customer-info{
-        display: flex;
-        font-size: 12px;
-        line-height: 35px;
-      
-    }
-    .yg-iflogindiv .icon-down2{
-        font-size: 12px;
-        margin-left: 10px;
-    }
-    .huiyuan{
-        display: inline-block;
-        vertical-align: middle;
-        height: 16px;
-        padding: 1px 5px;
-        border-radius: 2px;
-        background-color: #555;
-        background-image: linear-gradient(180deg, #6A6A69, #4A4948);
-        color: #FFF8B5;
-        font-size: 11px;
-        line-height: 15px;
-        font-weight: 600;
-        text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
-        margin-left: 3px;
-    }
-    .yg-iflogin{
-        color: red;
-        margin-right: 5px;
-     
-    }
-    .yg-reg{
-        margin-right: 9px;
-    }
-    .yg-reg:hover{
-        color: red;
-    }
-    .yg-customer-info-ul li a{
-        display:block;
-        padding: 0 12px;
-    
-    
-    }
-    .yg-customer-info-ul>li>a{
-        z-index: 88;
-    }
-    .yg-customer-info-ul li a .iconfont{
-        font-size: 12px;  
-        transform:scale(0.8);
-        margin-left: 5px;
-    }
-    
-    .yg-customer-info-ul li a .icon-shouji{
-        font-size: 16px;
-    }
-    .yg-customer-info-ul>li{
-        position: relative;
-    }
-    
-    .yg-customer-info-ul>li>ul{
-        position: absolute;
-        background: #ffffff;
-        box-shadow: 0 0 2px #cccccc;
-       top: -300px;
-        left: 0;
-    }
-    .yg-customer-info-ul ul li{
-        float: left;
-    }
-    .yg-customer-info-ul ul li:hover a{
-    color: #C5000c;
-    }
-    .yg-customer-info-ul>li:hover{
-    
-        background: #ffffff;
-        box-shadow: 0 0px 2px #cccccc;
-    
-    }
-    .yg-customer-info-ul>li:hover ul{
-        transition: top .5s;
-        top: 36px;
-    
-        
-    }
-    .yg-customer-info-myshop {
-        width: 200%;
-    }
-    .yg-customer-info-myshop li{
-    
-        line-height: 50px;  
-      }
-      .yg-customer-info-weixin {
-          position: absolute;
-          right: 0;
-          padding: 20px;
-          box-shadow: 0 0px 2px #cccccc;    
-        background: #ffffff;
-       top: -280px;
-      }
-    .yg-customer-info-weixin img{
-        width: 140px;
-        height: 140px;
-    
-    
-    }
-    .yg-customer-info-weixin p{
-        font-size: 12px;
-        text-align: center;
-        line-height: 20px;
-        color: #999999;
-    }
-    .yg-customer-info-ul>li:hover .yg-customer-info-weixin{
-      transition: top .5s;
-      top: 36px;
-    
-    }
+}
+.yg-reg{
+    margin-right: 9px;
+}
+.yg-reg:hover{
+    color: red;
+}
+.yg-customer-info-ul li a{
+    display:block;
+    padding: 0 12px;    
+}
+.yg-customer-info-ul>li>a{
+    z-index: 88;
+}
+.yg-customer-info-ul li a .iconfont{
+    font-size: 12px;  
+    transform:scale(0.8);
+    margin-left: 5px;
+}
+
+.yg-customer-info-ul li a .icon-shouji{
+    font-size: 16px;
+}
+.yg-customer-info-ul>li{
+    position: relative;
+}
+
+.yg-customer-info-ul>li>ul{
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 0 0 2px #cccccc;
+    top: -300px;
+    left: 0;
+    z-index: 22;
+}
+.yg-customer-info-ul ul li{
+    float: left;
+}
+.yg-customer-info-ul ul li:hover a{
+color: #C5000c;
+}
+.yg-customer-info-ul>li:hover{
+    background: #ffffff;
+    box-shadow: 0 0px 2px #cccccc;   
+}
+.yg-customer-info-ul>li:hover ul{
+    transition: top .5s;
+    top: 36px;           
+}
+.yg-customer-info-myshop {
+    width: 200%;
+}
+.yg-customer-info-myshop li{   
+    line-height: 50px;  
+}
+.yg-customer-info-weixin {
+    position: absolute;
+    right: 0;
+    padding: 20px;
+    box-shadow: 0 0px 2px #cccccc;    
+background: #ffffff;
+top: -280px;
+}
+.yg-customer-info-weixin img{
+    width: 140px;
+    height: 140px;
+}
+.yg-customer-info-weixin p{
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+    color: #999999;
+}
+.yg-customer-info-ul>li:hover .yg-customer-info-weixin{
+    transition: top .5s;
+    top: 36px;
+
+}

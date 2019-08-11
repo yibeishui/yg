@@ -1,60 +1,9 @@
-/* *{
-    padding: 0%;
-    margin: 0%;
-    list-style: none;
-    text-decoration: none;
-
-
-}
-html,body{
-    width: 100%;
-    height: 100%;
-}
-
-#yg{
-    display: flex;
-    flex-direction: column;
-
-}
-.yg-content{
-    width: 1210px;
-    margin: 0 auto;
-    height: 100%;
-}
-.fr{
-    float: right;
-}
-.fl{
-    float: left;
-}
-.clearfix::after{
-    content: " ";
-    display: block;
-    clear: both;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden;
-}
-a{
-    color: #000000;
-
-} */
-
-
-
-
-
-
 
 
 /* 主要内容 */
 .yg-main{
     flex: 1;
-
 }
-
-
-
 
 .yg-nav-middle{
     height:79px;
@@ -93,9 +42,7 @@ a{
 }
 .yg-pptj{
     width: 185px;
-    height: 400px;
-
-   
+    height: 400px; 
     background: pink;
 }
 .yg-pptj>h2{
@@ -114,8 +61,6 @@ a{
  
  font-size: 12px;
 text-align: center;
-
-
 }
 .yg-pptj-p1{
 font-weight: bold;
@@ -137,7 +82,6 @@ margin-bottom: 5px;
 background: #f2f2f2;
 overflow: hidden;
 
-
 }
 /*  */
 .yg-miaosha{
@@ -153,8 +97,6 @@ overflow: hidden;
     box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
-
- 
 }
 .yg-miaosha-headerdiv span:nth-child(1){
     font-size: 36px;
@@ -185,8 +127,6 @@ padding: 5px;
 font-size: 16px;
 
 }
-
-
 .yg-miaosha-con{
     position: relative;
     height: 250px;
@@ -223,8 +163,6 @@ font-size: 16px;
     width: 130px;
     height: 130px;
 }
-
-
 
 .item-p1{
     font-size: 12px;
@@ -369,8 +307,6 @@ height: 130px;
     box-sizing: border-box;
 }
 
-
-
 /*  */
 .yg-cream{
     height: 478px;
@@ -387,10 +323,10 @@ background: #cd375e;
 }
 .yg-cream>div:nth-child(2) .yg-cream-header{
     background: #974676;
-    }
-    .yg-cream>div:nth-child(3) .yg-cream-header{
-        background: #78538e;
-        }
+}
+.yg-cream>div:nth-child(3) .yg-cream-header{
+background: #78538e;
+}
 .yg-cream-header{
 height: 58px;
 color: #ffffff;
@@ -401,8 +337,7 @@ padding-left: 25px;
 box-sizing: border-box;
 }
 .yg-cream-con{
-    padding: 10px;
-    
+    padding: 10px;   
 }
 .yg-cream-con .yg-shop-bottom .yg-shopsmallimg:nth-child(2){
     margin-right: 0;
@@ -411,8 +346,6 @@ box-sizing: border-box;
 .yg-cream .yg-shopsmall:nth-child(1){
 border-bottom: 1px solid #cccccc;
 }
-
-
 
 /*  */
 .yg-youlike{

@@ -28,7 +28,6 @@ $(function(){
         })
   
      
-    
         $(".modle-head").load("./model/Mhead-top.html",function(){
             if(regnames.length==0){
                 iflogin=false;
@@ -51,7 +50,7 @@ $(function(){
         });
         $(".modle-search").load("./model/Msearch.html", function () {
             navul = $(".yg-nav-shop");
-           
+            $.headcar()
         });
         reslove()
     }).then(function(){
@@ -176,20 +175,7 @@ $(".xiangqing-shop-moreinfo").on("click",".shop-moreinfo-tocar",function(){
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-            // 插件放大镜使用
-
-     
+    // 插件放大镜使用     
     var magnifierConfig = {
         magnifier: "#magnifier1", //最外层的大容器
 		width : 380,//图片放大后承载容器宽度
@@ -219,10 +205,6 @@ $(".xiangqing-shop-moreinfo").on("click",".shop-moreinfo-tocar",function(){
             }
         })
     })
-
-
-
-
 
 
 })

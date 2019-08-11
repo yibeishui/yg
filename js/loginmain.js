@@ -1,7 +1,6 @@
 $(function(){
     let username=JSON.parse(Cookie.getItem("regname"));
-    
-    // console.log(username.name);
+
     
     $(".model-header").load("./model/Mhead-top.html",function(){
     

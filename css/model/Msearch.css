@@ -6,7 +6,6 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-
 }
 .yg-sidebar li{
     width: 35px;
@@ -14,14 +13,10 @@
     margin-bottom: 1px;
     background-color: #7a6e6e;
     border-radius: 3px 0 0 3px;
-    position: relative;
-   
-
-   
+    position: relative;  
 }
 .yg-sidebar li a{
-    display: flex;
-    
+    display: flex;    
 }
 .yg-sidebar li a p:nth-child(1){
     width: 35px;
@@ -31,8 +26,7 @@
     line-height: 35px;
     font-size: 22px;
     background-color: #7a6e6e;
-    z-index: 99999;
-   
+    z-index: 99999;   
 }
 .yg-sidebar li a p:nth-child(2){
     position: absolute;
@@ -53,8 +47,6 @@
     right: 34px;
     transition: right .5s;
 }
-
-
 .yg-totop{
     position: fixed;
     z-index: 9999;  
@@ -70,14 +62,11 @@
     font-size: 20px;
 }
 
-
-
 /* 检索 */
 .yg-search{
     height: 109px;
     padding-top: 30px;
     box-sizing: border-box;
-
 }
 
 .yg-search .yg-content{
@@ -134,9 +123,13 @@ margin-right: 120px;
     border: 1px solid #cccccc;
     display: none;
     top: -5px;
-
 }
 .yg-car{
+    position: relative;
+
+}
+.yg-car>a{
+    display: inline-block;
     width: 140px;
     height: 36px;
     line-height: 36px;
@@ -152,27 +145,103 @@ margin-right: 120px;
     line-height: 36px;
     margin-left: 10px;
     vertical-align: middle;
+}
+.yg-car:hover .carlist{
+    display: block;
+}
+.yg-car:hover>a{
+    background: #fff;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2) ;
+    border-bottom: none;       
+}
+.yg-car .carlist{
+    position: absolute;
+    right: 0px;
+    display: none;
+    width: 308px;
+    top: 37px;
+    color: #999999;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    /* padding: 0 10px; */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.carlist h5{
+    padding: 0 10px;
+    line-height: 30px;
+    text-align: left;
 
 }
+.noshop{
+    height: 50px;
+    display: none;
+}
+.haveshop{
+    display: none;
+}
+.haveshop-list{
+    margin-top: 10px;
+    padding: 0 8px;
+}
+.havelistitem{  
+      margin: 0 auto 0 2%;
+    height: 60px;
+    display: flex;
+    font-size: 12px;
+}
+.havelistitem>img{
+    width: 48px;
+    height: 48px;
+}
+.havelistitem-div1{
+    width: 110px;
+    overflow: hidden;
+}
+.havelistitem-div1>p:nth-child(1){
+    height: 33px;
+    line-height: 16px;
+    overflow: hidden;
+}
+.havelistitem-div1>p:nth-child(2){
+    height: 16px;
+    line-height: 16px;
+    color: #cccccc;
+}
+.havelistitem-div2{
+text-align: right;
+flex: 1;
+    overflow: hidden;
+}
+.alllist{
+    display: flex;
+    background-color: #F0F0F0;
+    padding: 8px;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 28px;
+    justify-content: space-between;
+}
+.alllist a{
+    display: block;
 
-
+    background-color: #F30213;
+    padding: 4px 8px;
+    border-radius: 4px;
+    line-height: 20px;
+    color: #FFF;
+    font-weight: 600;
+}
 .yg-nav{
-    /* height: 521px; */
     font-size: 14px;
 }
 .yg-nav-top{
     border-bottom: 2px solid red;
     box-sizing: border-box;
-
 }
-
 .yg-nav-top .yg-content{
     height: 42px;
     display: flex;
- 
-
 }
-
 
 .yg-nav-top-dl{
     line-height: 42px;
@@ -182,7 +251,6 @@ margin-right: 120px;
     color: #f30213;
     padding: 0 24px;
     font-weight: bold;
-
 }
 .yg-nav-top-dl dd{
 
@@ -198,17 +266,12 @@ color: red;
     position: relative;
     background: rgb(238, 14, 29);
  
-   
-   
 }
 
 .yg-navshopall a{
     color: #ffffff;
-
 }
-/* .yg-navshopall li{
 
-} */
 .yg-navshopall>a{
     margin-left: 17px;
 }
@@ -226,7 +289,6 @@ color: red;
     background: #6E6568;
     color: #ffffff;
 
-    
 }
 .yg-nav-shop li{
     height: 34px;
@@ -244,8 +306,6 @@ color: red;
     left: 180px;
     display: none;
     border-right: 1px solid #e6e6e6;
-
-
 }
 
 .yg-nav-div1{
@@ -256,7 +316,6 @@ color: red;
     font-size: 12px;
     display: flex;
    
-    
 }
 
 .yg-nav-div1 dl dt a{
@@ -281,8 +340,7 @@ color: red;
     border-bottom:none;
 }
 .yg-nav-listtit dl dd{
-    padding: 0 10px;
-   
+    padding: 0 10px;  
     border-left: 1px solid #cccccc;
     height: 16px;
     line-height: 16px;
@@ -293,14 +351,11 @@ color: red;
     color: #343A34;
 }
 .yg-nav-listdiv3{
-    width: 240px;
-  
+    width: 240px; 
 }
 .yg-nav-listdiv3 img{
     display:block;
     width: 240px;
     height: 146px;
     border-bottom: 1px solid #cccccc;
-
-
 }

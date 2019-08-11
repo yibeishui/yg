@@ -5,17 +5,17 @@ $(function () {
     let allres;
     let dd;
     let car;
-    let arrjson1=Cookie.getItem("regname")?Cookie.getItem("regname"):`[]`;
-    let regnames=JSON.parse(arrjson1);
-    let iflogin=false;
+    let arrjson1 = Cookie.getItem("regname") ? Cookie.getItem("regname") : `[]`;
+    let regnames = JSON.parse(arrjson1);
+    let iflogin = false;
     new Promise(function (resolve, reject) {
         $(".modle-head").load("./model/Mhead-top.html", function () {
-            if(regnames.length==0){
-                iflogin=false;
-            }else{
-                iflogin=true;
-                console.log(11,);
-                
+            if (regnames.length == 0) {
+                iflogin = false;
+            } else {
+                iflogin = true;
+                console.log(11, );
+
                 $(".yg-iflogindiv").html(`<span>${regnames["name"]}</span><span class="huiyuan">暂无等级会员</span><span class="iconfont icon-down2"></span>`);
             }
             $(".tomain").html(`<span class="iconfont icon-shouye"></span><a href="./head.html">返回首页</a>`)
@@ -157,7 +157,7 @@ $(function () {
 
                 }
                 dd();
-                
+
                 resolve();
             }
 
@@ -180,25 +180,25 @@ $(function () {
             $(".yg-footbottom").css("marginTop", "30px")
         })
 
-        
-        let arrjson=Cookie.getItem("zuji")?  Cookie.getItem("zuji"):`[]`;
-        let zujiarr=JSON.parse(arrjson);
-       if(zujiarr.length!=0){
-        let zujilistres=   zujiarr.map(e=>{
-               return `<li class="zuji-item" data-item="${e.id}"><a href="">
+
+        let arrjson = Cookie.getItem("zuji") ? Cookie.getItem("zuji") : `[]`;
+        let zujiarr = JSON.parse(arrjson);
+        if (zujiarr.length != 0) {
+            let zujilistres = zujiarr.map(e => {
+                return `<li class="zuji-item" data-item="${e.id}"><a href="">
                <div><img src="${e.img}" alt="" class="zujiimg"></div>
                <p class="zuji-p1">${e.tit}</p>
                <p class="zuji-p2">${e.price}</p>
            </a></li>`
-           }).join("");
-           let zujidiv=` <div class="yg-content zuji-con">
+            }).join("");
+            let zujidiv = ` <div class="yg-content zuji-con">
            <div class="zuji-h2">我的足迹</div>
            <ul>
               ${zujilistres}
            </ul></div>`
-       $(".zuji").html(zujidiv)
-      
-       }else{}
+            $(".zuji").html(zujidiv)
+
+        } else { }
 
     }).then(() => {
         function fn() {
